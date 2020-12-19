@@ -3,4 +3,7 @@
     <string name="temp_text">Tap to change temperature</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="add_water">Hold to add water</string>
+    <string name="add_ice">Tap to add ice</string>
 </resources>
