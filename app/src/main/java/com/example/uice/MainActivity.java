@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         freezer = (Button) findViewById(R.id.freezer_temp);
         freezer.setText(String.valueOf(freezer_temp));
 
-        actions = (ImageButton) findViewById(R.id.actions_button);
+        actions = (ImageButton) findViewById(R.id.ice_water_button);
         actions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

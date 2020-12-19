@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">UIce</string>
     <string name="temp_text">Tap to change temperature</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-
+    <string name="date">Date</string>
+    <string name="clock">Clock</string>
+    <string name="fridge">Fridge</string>
+    <string name="freezer">Freezer</string>
+    <string name="ice_water">Ice/Water</string>
+    <string name="notes">Notes</string>
+    <string name="settings">Settings</string>
     <string name="add_water">Hold to add water</string>
     <string name="add_ice">Tap to add ice</string>
 </resources>
