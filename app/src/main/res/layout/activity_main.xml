@@ -10,7 +10,7 @@
         android:id="@+id/temp_text"
         android:layout_width="248dp"
         android:layout_height="27dp"
-        android:text="Tap to change temperature"
+        android:text="@string/temp_text"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
