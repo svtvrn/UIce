@@ -91,5 +91,8 @@ public class MainActivity extends AppCompatActivity {
     public void openFridgePopup(){
         dialogBuilder = new AlertDialog.Builder(this);
         final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
+        dialogBuilder.setView(temperaturePopupWindow);
+        dialog = dialogBuilder.create();
+        dialog.show();
     }
 }
