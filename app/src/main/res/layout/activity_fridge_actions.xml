@@ -10,95 +10,81 @@
         android:id="@+id/add_water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="@string/add_water"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintTop_toBottomOf="@+id/fridge_actions_toolbar" />
 
     <TextView
         android:id="@+id/add_ice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="48dp"
         android:text="@string/add_ice"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/add_water_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintTop_toBottomOf="@+id/add_water_button" />
 
     <ImageButton
         android:id="@+id/add_water_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:background="@null"
         android:contentDescription="@string/add_water_button"
         android:src="@drawable/addwaterbutton"
-        app:layout_constraintBottom_toTopOf="@+id/add_ice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_water"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintTop_toBottomOf="@+id/add_water" />
 
     <ImageButton
         android:id="@+id/ice1_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="32dp"
         android:background="@null"
         android:contentDescription="@string/ice1"
         android:src="@drawable/ice1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
 
     <ImageButton
         android:id="@+id/ice2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:background="@null"
         android:contentDescription="@string/ice2"
         android:src="@drawable/ice2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ice3_button"
         app:layout_constraintStart_toEndOf="@+id/ice1_button"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
 
     <ImageButton
         android:id="@+id/ice3_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="150dp"
         android:background="@null"
         android:contentDescription="@string/ice3"
         android:src="@drawable/ice3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/fridge_actions_toolbar"
@@ -107,12 +93,9 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/add_water"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/fridge_actions_back"
