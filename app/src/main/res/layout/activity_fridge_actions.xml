@@ -100,4 +100,31 @@
         app:layout_constraintTop_toBottomOf="@+id/add_ice"
         app:layout_constraintVertical_bias="0.4" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fridge_actions_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/add_water"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/fridge_actions_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="@string/back"
+        android:src="@drawable/fridgeback"
+        app:layout_constraintBottom_toBottomOf="@+id/fridge_actions_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/fridge_actions_toolbar"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/fridge_actions_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/fridge_actions_toolbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
