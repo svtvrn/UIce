@@ -1,5 +1,6 @@
 package com.example.uice;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton actions;
     private ImageButton notes;
     private ImageButton settings;
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+    private Button confirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         fridge.setText(String.valueOf(fridge_temp));
         freezer = (Button) findViewById(R.id.freezer_temp);
         freezer.setText(String.valueOf(freezer_temp));
+
+        fridge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFridgePopup();
+            }
+        });
 
         actions = (ImageButton) findViewById(R.id.ice_water_button);
         actions.setOnClickListener(new View.OnClickListener() {
@@ -75,5 +86,10 @@ public class MainActivity extends AppCompatActivity {
     public void openSettingsActivity(){
         Intent intent = new Intent (/*this,FridgeSettings.class*/);
         startActivity(intent);
+    }
+
+    public void openFridgePopup(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
     }
 }
