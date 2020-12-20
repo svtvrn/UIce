@@ -10,4 +10,8 @@
     <string name="settings">Settings</string>
     <string name="add_water">Hold to add water</string>
     <string name="add_ice">Tap to add ice</string>
+    <string name="add_water_button">Water</string>
+    <string name="ice1">Ice</string>
+    <string name="ice2">Ice</string>
+    <string name="ice3">Ice</string>
 </resources>
