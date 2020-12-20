@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_water" />
 
     <ImageButton
-        android:id="@+id/ice1_button"
+        android:id="@+id/add_ice_1_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_ice" />
 
     <ImageButton
-        android:id="@+id/ice2_button"
+        android:id="@+id/add_ice_2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -70,12 +70,12 @@
         android:background="@null"
         android:contentDescription="@string/ice2"
         android:src="@drawable/ice2"
-        app:layout_constraintEnd_toStartOf="@+id/ice3_button"
-        app:layout_constraintStart_toEndOf="@+id/ice1_button"
+        app:layout_constraintEnd_toStartOf="@+id/add_ice_3_button"
+        app:layout_constraintStart_toEndOf="@+id/add_ice_1_button"
         app:layout_constraintTop_toBottomOf="@+id/add_ice" />
 
     <ImageButton
-        android:id="@+id/ice3_button"
+        android:id="@+id/add_ice_3_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
