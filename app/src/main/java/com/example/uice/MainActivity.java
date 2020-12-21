@@ -2,8 +2,8 @@ package com.example.uice;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +11,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+
     private String fridge_temp = "4°C";
     private String freezer_temp = "-10°C";
     private Button fridge;
@@ -23,11 +28,14 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton actions;
     private ImageButton notes;
     private ImageButton settings;
+
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
+    private RecyclerView temperatures;
+    TempAdapter adapter;
     private Button save;
     private Button cancel;
-    private RecyclerView temperatures;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +83,11 @@ public class MainActivity extends AppCompatActivity {
                 openSettingsActivity();
             }
         });
+
+        ArrayList<String> freezerTemperatures = new ArrayList<>();
+
     }
+
     public void openActionsActivity(){
         Intent intent = new Intent (this,FridgeActions.class);
         startActivity(intent);
@@ -92,14 +104,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openFridgePopup(){
-
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
-        final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
-        temperatures = (RecyclerView) findViewById(R.id.temp_recycler_view);
-        save = (Button) findViewById(R.id.save_temp_button);
-        cancel = (Button) findViewById(R.id.cancel_temp_button);
-        dialogBuilder.setView(temperaturePopupWindow);
+        final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
+
+        RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
+        temperatures.setLayoutManager(new LinearLayoutManager(this));
+        ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0","1","2","3","4","5","6","7","8","9","10"));
+        adapter = new TempAdapter(this, fridgeTemperatures);
+        //adapter.setClickListener(this);
+        temperatures.setAdapter(adapter);
+
+        /*
+        public void onItemClick(View view, int position) {
+            Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        }
+        
+         */
+
+        save = (Button) tempPopupView.findViewById(R.id.save_temp_button);
+        cancel = (Button) tempPopupView.findViewById(R.id.cancel_temp_button);
+        dialogBuilder.setView(tempPopupView);
         dialog = dialogBuilder.create();
         dialog.show();
+
+
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO
+            }
+        });
+
     }
+
+
 }
