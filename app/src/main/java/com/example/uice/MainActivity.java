@@ -2,6 +2,7 @@ package com.example.uice;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton settings;
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private Button confirm;
+    private Button save;
+    private Button cancel;
+    private RecyclerView temperatures;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,8 +92,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openFridgePopup(){
-        dialogBuilder = new AlertDialog.Builder(this);
+
+        dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
+        temperatures.findViewById(R.id.temp_recycle_view);
+        save.findViewById(R.id.save_temp);
+        cancel.findViewById(R.id.cancel_temp);
         dialogBuilder.setView(temperaturePopupWindow);
         dialog = dialogBuilder.create();
         dialog.show();
