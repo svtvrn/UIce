@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
-        temperatures.findViewById(R.id.temp_recycle_view);
-        save.findViewById(R.id.save_temp);
-        cancel.findViewById(R.id.cancel_temp);
+        temperatures = (RecyclerView) findViewById(R.id.temp_recycle_view);
+        save = (Button) findViewById(R.id.save_temp);
+        cancel = (Button) findViewById(R.id.cancel_temp);
         dialogBuilder.setView(temperaturePopupWindow);
         dialog = dialogBuilder.create();
         dialog.show();
