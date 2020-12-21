@@ -7,7 +7,7 @@
     tools:context=".FridgeActions">
 
     <TextView
-        android:id="@+id/add_water"
+        android:id="@+id/add_water_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fridge_actions_toolbar" />
 
     <TextView
-        android:id="@+id/add_ice"
+        android:id="@+id/add_ice_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -46,7 +46,7 @@
         android:src="@drawable/addwaterbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_water" />
+        app:layout_constraintTop_toBottomOf="@+id/add_water_text" />
 
     <ImageButton
         android:id="@+id/add_ice_1_button"
@@ -58,7 +58,7 @@
         android:contentDescription="@string/ice1"
         android:src="@drawable/ice1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice_text" />
 
     <ImageButton
         android:id="@+id/add_ice_2_button"
@@ -72,7 +72,7 @@
         android:src="@drawable/ice2"
         app:layout_constraintEnd_toStartOf="@+id/add_ice_3_button"
         app:layout_constraintStart_toEndOf="@+id/add_ice_1_button"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice_text" />
 
     <ImageButton
         android:id="@+id/add_ice_3_button"
@@ -84,7 +84,7 @@
         android:contentDescription="@string/ice3"
         android:src="@drawable/ice3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_ice" />
+        app:layout_constraintTop_toBottomOf="@+id/add_ice_text" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/fridge_actions_toolbar"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/fridge_actions_back"
+        android:id="@+id/fridge_actions_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/temp_text"
+        android:id="@+id/change_temp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -56,7 +56,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge_temp" />
+        app:layout_constraintTop_toBottomOf="@+id/fridge_temp_button" />
 
     <TextView
         android:id="@+id/notes_text"
@@ -69,10 +69,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freezer_temp" />
+        app:layout_constraintTop_toBottomOf="@+id/freezer_temp_button" />
 
     <TextView
-        android:id="@+id/fridge"
+        android:id="@+id/fridge_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
@@ -82,10 +82,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temp_text" />
+        app:layout_constraintTop_toBottomOf="@+id/change_temp_text" />
 
     <TextView
-        android:id="@+id/freezer"
+        android:id="@+id/freezer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -95,10 +95,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temp_text" />
+        app:layout_constraintTop_toBottomOf="@+id/change_temp_text" />
 
     <Button
-        android:id="@+id/fridge_temp"
+        android:id="@+id/fridge_temp_button"
         android:layout_width="150sp"
         android:layout_height="120sp"
         android:layout_marginStart="32dp"
@@ -107,10 +107,10 @@
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge" />
+        app:layout_constraintTop_toBottomOf="@+id/fridge_text" />
 
     <Button
-        android:id="@+id/freezer_temp"
+        android:id="@+id/freezer_temp_button"
         android:layout_width="150sp"
         android:layout_height="120sp"
         android:layout_marginTop="8dp"
@@ -119,7 +119,7 @@
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freezer" />
+        app:layout_constraintTop_toBottomOf="@+id/freezer_text" />
 
     <ImageButton
         android:id="@+id/ice_water_button"

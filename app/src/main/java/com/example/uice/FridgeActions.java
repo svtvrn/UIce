@@ -2,7 +2,6 @@ package com.example.uice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,7 +20,7 @@ public class FridgeActions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_actions);
 
-        back = findViewById(R.id.fridge_actions_back);
+        back = findViewById(R.id.fridge_actions_back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

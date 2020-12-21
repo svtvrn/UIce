@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewDate = findViewById(R.id.date);
         textViewDate.setText(currentDate);
 
-        fridge = (Button) findViewById(R.id.fridge_temp);
+        fridge = (Button) findViewById(R.id.fridge_temp_button);
         fridge.setText(String.valueOf(fridge_temp));
-        freezer = (Button) findViewById(R.id.freezer_temp);
+        freezer = (Button) findViewById(R.id.freezer_temp_button);
         freezer.setText(String.valueOf(freezer_temp));
 
         fridge.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View temperaturePopupWindow = getLayoutInflater().inflate(R.layout.fridge_popup,null);
-        temperatures = (RecyclerView) findViewById(R.id.temp_recycle_view);
-        save = (Button) findViewById(R.id.save_temp);
-        cancel = (Button) findViewById(R.id.cancel_temp);
+        temperatures = (RecyclerView) findViewById(R.id.temp_recycler_view);
+        save = (Button) findViewById(R.id.save_temp_button);
+        cancel = (Button) findViewById(R.id.cancel_temp_button);
         dialogBuilder.setView(temperaturePopupWindow);
         dialog = dialogBuilder.create();
         dialog.show();
