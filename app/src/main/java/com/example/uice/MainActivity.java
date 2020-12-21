@@ -109,9 +109,9 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0","1","2","3","4","5","6","7","8","9","10"));
+        ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
         adapter = new TempAdapter(this, fridgeTemperatures);
-        //adapter.setClickListener(this);
+        //adapter.setClickListener(new ItemClickListener());
         temperatures.setAdapter(adapter);
 
         /*
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO
+                dialog.dismiss();
             }
         });
 

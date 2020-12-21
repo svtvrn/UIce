@@ -72,4 +72,5 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
 }
