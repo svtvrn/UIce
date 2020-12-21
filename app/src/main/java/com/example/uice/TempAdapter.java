@@ -31,8 +31,8 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String animal = mData.get(position);
-        holder.myTextView.setText(animal);
+        String temperature = mData.get(position);
+        holder.myTextView.setText(temperature);
     }
 
     // total number of rows
@@ -51,7 +51,6 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
             myTextView = itemView.findViewById(R.id.temp_text);
             itemView.setOnClickListener(this);
         }
-
         @Override
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());

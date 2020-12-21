@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private Button save;
     private Button cancel;
 
+    ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
+    ArrayList<String> freezerTemperatures = new ArrayList<>(Arrays.asList("-10°C","-9°C","-8°C","-7°C","-6°C","-5°C","-4°C","-3°C","-2°C","-1°C","0°C"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,14 @@ public class MainActivity extends AppCompatActivity {
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFridgePopup();
+                openFridgePopup(fridgeTemperatures);
+            }
+        });
+
+        freezer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFridgePopup(freezerTemperatures);
             }
         });
 
@@ -103,14 +112,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openFridgePopup(){
+    public void openFridgePopup(ArrayList<String> tempValues){
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
 
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
-        adapter = new TempAdapter(this, fridgeTemperatures);
+
+        adapter = new TempAdapter(this, tempValues);
         //adapter.setClickListener(new ItemClickListener());
         temperatures.setAdapter(adapter);
 
