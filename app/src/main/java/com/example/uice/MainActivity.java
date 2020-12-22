@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TempAdapter.OnTemperatureListener {
 
     private String fridge_temp = "4°C";
     private String freezer_temp = "-10°C";
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private AlertDialog dialog;
     private RecyclerView temperatures;
     TempAdapter adapter;
+    String savedValue;
     private Button save;
     private Button cancel;
 
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new TempAdapter(this, tempValues);
+        adapter = new TempAdapter(this, tempValues,this);
         //adapter.setClickListener(new ItemClickListener());
         temperatures.setAdapter(adapter);
 
@@ -156,4 +157,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onTempClick(View view, int position) {
+
+    }
 }
