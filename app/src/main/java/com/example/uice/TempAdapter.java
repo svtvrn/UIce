@@ -14,16 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
-    private List<String> mData;
+    private List<TextView> mData;
     private LayoutInflater mInflater;
     private OnTemperatureListener onTemperatureListener;
 
+    int lastClicked = -1;
+
     public interface OnTemperatureListener {
-        void onTempClick(View view, int position);
+        void onTempClick(int position);
     }
 
     // data is passed into the constructor
-    TempAdapter(Context context, List<String> data,OnTemperatureListener onTemperatureListener) {
+    TempAdapter(Context context, List<TextView> data,OnTemperatureListener onTemperatureListener) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
         this. onTemperatureListener = onTemperatureListener;
@@ -39,10 +41,8 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String temperature = mData.get(position);
-        holder.myTextView.setText(temperature);
-
-
+        TextView temperature = mData.get(position);
+        holder.myTextView.setText(temperature.getText());
     }
 
     @Override
@@ -67,7 +67,13 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
         }
         @Override
         public void onClick(View view) {
-            onTemperatureListener.onTempClick(view, getAdapterPosition());
+            if(lastClicked!=-1) {
+                mData.get(lastClicked).setTextColor(Color.BLACK);
+                notifyItemChanged(lastClicked);
+            }
+            lastClicked = getAdapterPosition();
+            myTextView.setTextColor(Color.RED);
+            onTemperatureListener.onTempClick(lastClicked);
 
         }
     }

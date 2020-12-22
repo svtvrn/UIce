@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,14 +32,15 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private RecyclerView temperatures;
     TempAdapter adapter;
-    String savedValue;
+    TextView selectedValue;
     private Button save;
     private Button cancel;
 
-    ArrayList<String> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
-    ArrayList<String> freezerTemperatures = new ArrayList<>(Arrays.asList("-10°C","-9°C","-8°C","-7°C","-6°C","-5°C","-4°C","-3°C","-2°C","-1°C","0°C"));
+    //ArrayList<TextView> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
+    //ArrayList<String> freezerTemperatures = new ArrayList<>(Arrays.asList("-10°C","-9°C","-8°C","-7°C","-6°C","-5°C","-4°C","-3°C","-2°C","-1°C","0°C"));
+
+    TextView[] values = new TextView[11];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +61,14 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFridgePopup(fridgeTemperatures);
+                openFridgePopup(true);
             }
         });
 
         freezer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFridgePopup(freezerTemperatures);
+                openFridgePopup(false);
             }
         });
 
@@ -113,23 +115,29 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         startActivity(intent);
     }
 
-    public void openFridgePopup(ArrayList<String> tempValues){
+    public void openFridgePopup(final Boolean type){
+        if(type){
+            for(int i=0; i<11; i++){
+                values[i] = new TextView(this);
+                values[i].setText(i + "°C");
+            }
+        }else{
+            int val = -10;
+            for(int i=0; i<11; i++){
+                values[i] = new TextView(this);
+                values[i].setText(val + "°C");
+                val++;
+            }
+        }
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
 
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new TempAdapter(this, tempValues,this);
+        adapter = new TempAdapter(this, Arrays.asList(values),this);
         //adapter.setClickListener(new ItemClickListener());
         temperatures.setAdapter(adapter);
-
-        /*
-        public void onItemClick(View view, int position) {
-            Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
-        }
-        
-         */
 
         save = (Button) tempPopupView.findViewById(R.id.save_temp_button);
         cancel = (Button) tempPopupView.findViewById(R.id.cancel_temp_button);
@@ -137,19 +145,23 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         dialog = dialogBuilder.create();
         dialog.show();
 
-
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
+                if(type){
+                    fridge.setText(selectedValue.getText());
+                    dialog.dismiss();
+                }else{
+                    freezer.setText(selectedValue.getText());
+                    dialog.dismiss();
+                }
             }
         });
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
+
                 dialog.dismiss();
             }
         });
@@ -158,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
 
     @Override
-    public void onTempClick(View view, int position) {
-
+    public void onTempClick(int position) {
+        selectedValue = values[position];
     }
 }
