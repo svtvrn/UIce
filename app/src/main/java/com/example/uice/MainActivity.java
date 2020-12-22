@@ -143,12 +143,16 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(type){
-                    fridge.setText(selectedValue);
+                if(selectedValue!=null) {
+                    if (type) {
+                        fridge.setText(selectedValue);
+
+                    }else {
+                        freezer.setText(selectedValue);
+                        //dialog.dismiss();
+                    }
                     dialog.dismiss();
-                }else{
-                    freezer.setText(selectedValue);
-                    dialog.dismiss();
+                    selectedValue = null;
                 }
             }
         });
