@@ -22,8 +22,8 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements TempAdapter.OnTemperatureListener {
 
-    private String fridge_temp = "4°C";
-    private String freezer_temp = "-10°C";
+    private String fridge_temp = "6°C";
+    private String freezer_temp = "-19°C";
     private Button fridge;
     private Button freezer;
     private ImageButton actions;
@@ -37,10 +37,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private Button save;
     private Button cancel;
 
-    //ArrayList<TextView> fridgeTemperatures = new ArrayList<>(Arrays.asList("0°C","1°C","2°C","3°C","4°C","5°C","6°C","7°C","8°C","9°C","10°C"));
-    //ArrayList<String> freezerTemperatures = new ArrayList<>(Arrays.asList("-10°C","-9°C","-8°C","-7°C","-6°C","-5°C","-4°C","-3°C","-2°C","-1°C","0°C"));
-
-    TextView[] values = new TextView[11];
+    ArrayList<TextView> values = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +92,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
                 openSettingsActivity();
             }
         });
-
-        ArrayList<String> freezerTemperatures = new ArrayList<>();
-
     }
 
     public void openActionsActivity(){
@@ -116,16 +110,19 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     }
 
     public void openFridgePopup(final Boolean type){
+        values.clear();
         if(type){
-            for(int i=0; i<11; i++){
-                values[i] = new TextView(this);
-                values[i].setText(i + "°C");
+            int val = 0;
+            for(int i=0; i<8; i++){
+                values.add(new TextView(this));
+                values.get(i).setText(val + "°C");
+                val++;
             }
         }else{
-            int val = -10;
-            for(int i=0; i<11; i++){
-                values[i] = new TextView(this);
-                values[i].setText(val + "°C");
+            int val = -23;
+            for(int i=0; i<10; i++){
+                values.add(new TextView(this));
+                values.get(i).setText(val + "°C");
                 val++;
             }
         }
@@ -135,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new TempAdapter(this, Arrays.asList(values),this);
+        adapter = new TempAdapter(this, values,this);
         //adapter.setClickListener(new ItemClickListener());
         temperatures.setAdapter(adapter);
 
@@ -168,9 +165,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     }
 
-
     @Override
     public void onTempClick(int position) {
-        selectedValue = values[position];
+        selectedValue = values.get(position);
     }
 }
