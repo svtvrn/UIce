@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     TempAdapter adapter;
-    TextView selectedValue;
+    String selectedValue;
     private Button save;
     private Button cancel;
 
-    ArrayList<TextView> values = new ArrayList<>();
+    ArrayList<String> values = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,15 +114,13 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         if(type){
             int val = 0;
             for(int i=0; i<8; i++){
-                values.add(new TextView(this));
-                values.get(i).setText(val + "°C");
+                values.add(val + "°C");
                 val++;
             }
         }else{
             int val = -23;
             for(int i=0; i<10; i++){
-                values.add(new TextView(this));
-                values.get(i).setText(val + "°C");
+                values.add(val + "°C");
                 val++;
             }
         }
@@ -146,10 +144,10 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             @Override
             public void onClick(View v) {
                 if(type){
-                    fridge.setText(selectedValue.getText());
+                    fridge.setText(selectedValue);
                     dialog.dismiss();
                 }else{
-                    freezer.setText(selectedValue.getText());
+                    freezer.setText(selectedValue);
                     dialog.dismiss();
                 }
             }
@@ -158,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 dialog.dismiss();
             }
         });
