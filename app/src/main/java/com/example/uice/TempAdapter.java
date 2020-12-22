@@ -14,18 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
-    private List<TextView> mData;
+    private List<String> mData;
     private LayoutInflater mInflater;
     private OnTemperatureListener onTemperatureListener;
 
-    int lastClicked = -1;
+    TextView lastTextview = null;
 
     public interface OnTemperatureListener {
         void onTempClick(int position);
     }
 
     // data is passed into the constructor
-    TempAdapter(Context context, List<TextView> data,OnTemperatureListener onTemperatureListener) {
+    TempAdapter(Context context, List<String> data,OnTemperatureListener onTemperatureListener) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
         this. onTemperatureListener = onTemperatureListener;
@@ -41,8 +41,8 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TextView temperature = mData.get(position);
-        holder.myTextView.setText(temperature.getText());
+        String temperature = mData.get(position);
+        holder.myTextView.setText(temperature);
     }
 
     @Override
@@ -67,14 +67,15 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
         }
         @Override
         public void onClick(View view) {
-            if(lastClicked!=-1) {
-                mData.get(lastClicked).setTextColor(Color.BLACK);
-                notifyItemChanged(lastClicked);
+            if(lastTextview != null) {
+                lastTextview.setTextColor(Color.BLACK);
+                lastTextview.setBackgroundColor(Color.WHITE);
             }
-            lastClicked = getAdapterPosition();
             myTextView.setBackgroundResource(R.drawable.roundbutton);
             myTextView.setTextColor(Color.WHITE);
-            onTemperatureListener.onTempClick(lastClicked);
+
+            lastTextview = myTextView;
+            onTemperatureListener.onTempClick(getAdapterPosition());
         }
     }
 
