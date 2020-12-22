@@ -9,7 +9,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/temp_recycler_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="260sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
@@ -23,7 +23,7 @@
         android:id="@+id/cancel_temp_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/roundbutton"
@@ -31,17 +31,18 @@
         android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/temp_recycler_view"
+        app:layout_constraintEnd_toStartOf="@+id/save_temp_button"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temp_recycler_view"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <Button
         android:id="@+id/save_temp_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/roundbutton"
         android:text="@string/save"
@@ -49,9 +50,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/temp_recycler_view"
         app:layout_constraintTop_toBottomOf="@+id/temp_recycler_view"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <TextView
         android:id="@+id/textView"
