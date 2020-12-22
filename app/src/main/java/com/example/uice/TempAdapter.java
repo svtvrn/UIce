@@ -75,7 +75,6 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
             myTextView.setBackgroundResource(R.drawable.roundbutton);
             myTextView.setTextColor(Color.WHITE);
             onTemperatureListener.onTempClick(lastClicked);
-
         }
     }
 
