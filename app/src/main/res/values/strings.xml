@@ -15,6 +15,7 @@
     <string name="ice2">Ice</string>
     <string name="ice3">Ice</string>
     <string name="back">back</string>
+    <string name="menu">Back to main menu</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="temperature">Temperature</string>
