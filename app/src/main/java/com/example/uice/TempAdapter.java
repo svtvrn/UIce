@@ -72,7 +72,8 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
                 notifyItemChanged(lastClicked);
             }
             lastClicked = getAdapterPosition();
-            myTextView.setTextColor(Color.RED);
+            myTextView.setBackgroundResource(R.drawable.roundbutton);
+            myTextView.setTextColor(Color.WHITE);
             onTemperatureListener.onTempClick(lastClicked);
 
         }
