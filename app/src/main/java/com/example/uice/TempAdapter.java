@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -68,8 +69,8 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
         @Override
         public void onClick(View view) {
             if(lastTextview != null) {
-                lastTextview.setTextColor(Color.BLACK);
-                lastTextview.setBackgroundColor(Color.WHITE);
+                lastTextview.setTextColor(ContextCompat.getColor(view.getContext(), R.color.colorPrimaryDark));
+                lastTextview.setBackgroundResource(R.color.colorAccent);
             }
             myTextView.setBackgroundResource(R.drawable.roundbutton);
             myTextView.setTextColor(Color.WHITE);
