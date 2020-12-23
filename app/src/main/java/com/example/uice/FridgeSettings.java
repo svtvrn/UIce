@@ -1,15 +1,17 @@
 package com.example.uice;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 
 public class FridgeSettings extends AppCompatActivity {
 
     private ImageButton back;
-
+    private SwitchCompat nightSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,18 @@ public class FridgeSettings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openMainMenu();
+            }
+        });
+
+        nightSwitch = (SwitchCompat) findViewById(R.id.night_mode_switch);
+        nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+
+                }else{
+
+                }
             }
         });
     }

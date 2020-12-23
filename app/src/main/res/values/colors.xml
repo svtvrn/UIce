@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#F0F6FB</color>
     <color name="black_overlay">#66000000</color>
+
+    <color name="nightModeText">#FFFFFF</color>
+    <color name="nightModeBackground">#100110</color>
 </resources>
