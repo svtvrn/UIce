@@ -7,7 +7,7 @@
 
     <color name="textPrimary">#FFF5FF</color>
     <color name="selectedPrimary">#FFF5FF</color>
-    <color name="backgroundPrimary">#121112</color>
+    <color name="backgroundPrimary">#090C0A</color>
     <color name="buttonPrimary">#5a0974</color>
     <color name="thumbPrimary">#5a0974</color>
 </resources>
