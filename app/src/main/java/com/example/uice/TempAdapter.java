@@ -69,11 +69,11 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
         @Override
         public void onClick(View view) {
             if(lastTextview != null) {
-                lastTextview.setTextColor(ContextCompat.getColor(view.getContext(), R.color.colorPrimaryDark));
-                lastTextview.setBackgroundResource(R.color.colorAccent);
+                lastTextview.setTextColor(ContextCompat.getColor(view.getContext(), R.color.textPrimary));
+                lastTextview.setBackgroundResource(R.color.backgroundPrimary);
             }
             myTextView.setBackgroundResource(R.drawable.roundbutton);
-            myTextView.setTextColor(Color.WHITE);
+            myTextView.setTextColor(ContextCompat.getColor(view.getContext(), R.color.selectedPrimary));
 
             lastTextview = myTextView;
             onTemperatureListener.onTempClick(getAdapterPosition());
