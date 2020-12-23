@@ -16,6 +16,9 @@ public class FridgeSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            nightSwitch.setChecked(true);
+        }*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_settings);
 
@@ -32,9 +35,9 @@ public class FridgeSettings extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 }else{
-
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
             }
         });
