@@ -2,9 +2,11 @@ package com.example.uice;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -44,17 +46,22 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Checks if Dark Theme is enabled.
+        SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
+        Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
+        if (isNightModeOn) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         TextClock clock = (TextClock) findViewById(R.id.clock);
         Calendar calendar = Calendar.getInstance();
-        String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
-        TextView textViewDate = findViewById(R.id.date);
-        textViewDate.setText(currentDate);
+        TextView date = findViewById(R.id.date);
+        date.setText(DateFormat.getDateInstance().format(calendar.getTime()));
 
         fridge = (Button) findViewById(R.id.fridge_temp_button);
         fridge.setText(String.valueOf(fridge_temp));
-        freezer = (Button) findViewById(R.id.freezer_temp_button);
-        freezer.setText(String.valueOf(freezer_temp));
-
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
+        freezer = (Button) findViewById(R.id.freezer_temp_button);
+        freezer.setText(String.valueOf(freezer_temp));
         freezer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
                 openSettingsActivity();
             }
         });
+
     }
 
     public void openActionsActivity(){
@@ -111,19 +121,20 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     public void openFridgePopup(final Boolean type){
         values.clear();
-        if(type){
+        if (type) {
             int val = 0;
             for(int i=0; i<8; i++){
                 values.add(val + "°C");
                 val++;
             }
-        }else{
+        } else {
             int val = -23;
             for(int i=0; i<10; i++){
                 values.add(val + "°C");
                 val++;
             }
         }
+
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
 
@@ -170,4 +181,5 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     public void onTempClick(int position) {
         selectedValue = values.get(position);
     }
+    
 }

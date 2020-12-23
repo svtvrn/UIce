@@ -30,32 +30,24 @@ public class FridgeSettings extends AppCompatActivity {
 
         SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
         final SharedPreferences.Editor prefEditor = appSettingsPreferences.edit();
-        Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
         nightSwitch = (SwitchCompat) findViewById(R.id.night_mode_switch);
-
-        if(isNightModeOn){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            nightSwitch.setChecked(true);
-        }else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            nightSwitch.setChecked(false);
-        }
-
-
-
+        Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
+        if (isNightModeOn) nightSwitch.setChecked(true);
+        else nightSwitch.setChecked(false);
         nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     prefEditor.putBoolean("NightMode",true);
-                }else{
+                } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     prefEditor.putBoolean("NightMode",false);
                 }
                 prefEditor.apply();
             }
         });
+
     }
 
     public void openMainMenu(){
