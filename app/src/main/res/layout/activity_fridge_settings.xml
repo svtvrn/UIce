@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/backgroundPrimary"
     tools:context=".FridgeSettings">
 
     <androidx.appcompat.widget.Toolbar
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu"
-        android:textColor="#ffffff"
+        android:textColor="@color/selectedPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/fridge_actions_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +52,7 @@
         android:layout_marginTop="72dp"
         android:text="@string/nightmode"
         android:textSize="25sp"
+        android:textColor="@color/textPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
