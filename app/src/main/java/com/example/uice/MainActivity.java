@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     }
 
     public void openSettingsActivity(){
-        Intent intent = new Intent (/*this,FridgeSettings.class*/);
+        Intent intent = new Intent (this,FridgeSettings.class);
         startActivity(intent);
     }
 
