@@ -21,4 +21,5 @@
     <string name="temperature">Temperature</string>
     <string name="select">Select a temperature</string>
     <string name="nightmode">Night mode</string>
+    <string name="brightness">Brightness:</string>
 </resources>

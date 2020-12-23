@@ -9,4 +9,6 @@
     <color name="selectedPrimary">#FFF5FF</color>
     <color name="backgroundPrimary">#F0F6FB</color>
     <color name="buttonPrimary">#5a0974</color>
+    <color name="thumbPrimary">#5a0974</color>
+
 </resources>
