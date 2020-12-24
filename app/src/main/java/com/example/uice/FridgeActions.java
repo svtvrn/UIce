@@ -11,9 +11,10 @@ public class FridgeActions extends AppCompatActivity {
 
     private ImageButton back;
     private ImageButton add_water;
-    private ImageButton add_ice_1;
-    private ImageButton add_ice_2;
-    private ImageButton add_ice_3;
+    private ImageButton add_ice;
+    private ImageButton add_crushed_ice;
+    //private ImageButton add_ice_2;
+    //private ImageButton add_ice_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +39,23 @@ public class FridgeActions extends AppCompatActivity {
 
         });
 
-        add_ice_1 = (ImageButton) findViewById(R.id.add_ice_1_button);
-        add_ice_1.setOnClickListener(new View.OnClickListener() {
+        add_ice = (ImageButton) findViewById(R.id.add_ice_button);
+        add_ice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addIce(1);
+                addIce(false);
             }
         });
 
-        add_ice_2 = (ImageButton) findViewById(R.id.add_ice_2_button);
-        add_ice_2.setOnClickListener(new View.OnClickListener() {
+        add_crushed_ice = (ImageButton) findViewById(R.id.add_crushed_ice_button);
+        add_crushed_ice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addIce(2);
+                addIce(true);
             }
         });
 
-        add_ice_3 = (ImageButton) findViewById(R.id.add_ice_3_button);
-        add_ice_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addIce(3);
-            }
-        });
-
+        //add_ice_3 = (ImageButton) findViewById(R.id.add_ice_3_button);
     }
 
     public void openMainMenu(){
@@ -72,13 +66,13 @@ public class FridgeActions extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Adding Water...", Toast.LENGTH_LONG).show();
     }
 
-    public void addIce(int amount) {
-        if (amount==1) {
-            Toast.makeText(getApplicationContext(), "Added Ice 1.", Toast.LENGTH_SHORT).show();
-        } else if (amount==2) {
-            Toast.makeText(getApplicationContext(), "Added Ice 2.", Toast.LENGTH_SHORT).show();
+    public void addIce(boolean type) {
+        if (!type) {
+            Toast.makeText(getApplicationContext(), "Added ice.", Toast.LENGTH_SHORT).show();
+        } else if (type) {
+            Toast.makeText(getApplicationContext(), "Added crushed ice.", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Added Ice 3.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Added Ice 3.", Toast.LENGTH_SHORT).show();
         }
     }
 
