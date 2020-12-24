@@ -64,8 +64,8 @@
         android:id="@+id/power_freeze_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="48sp"
+        android:layout_marginEnd="22sp"
         android:text="@string/power_freeze"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
@@ -77,12 +77,12 @@
         android:id="@+id/notes_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="77dp"
         android:text="@string/notes"
-        android:textStyle="bold"
         android:textColor="@color/textPrimary"
         android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/notes_button"
         app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
 
@@ -95,7 +95,7 @@
         android:textColor="@color/textPrimary"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toEndOf="@+id/ice_water_button"
         app:layout_constraintTop_toBottomOf="@+id/power_freeze_button" />
 
@@ -195,7 +195,7 @@
         android:layout_marginTop="8dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintHorizontal_bias="0.67"
         app:layout_constraintStart_toEndOf="@+id/ice_water_button"
         app:layout_constraintTop_toBottomOf="@+id/power_freeze_text"
         app:srcCompat="@drawable/powerfreeze" />
