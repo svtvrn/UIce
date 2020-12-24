@@ -35,6 +35,9 @@ public class FridgeSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_settings);
+        SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
+        final SharedPreferences.Editor prefEditor = appSettingsPreferences.edit();
+        askPermission(this);
 
         back = findViewById(R.id.fridge_actions_back_button);
         back.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +47,11 @@ public class FridgeSettings extends AppCompatActivity {
             }
         });
 
-        askPermission(this);
+        fridgeBrightnessBar = findViewById(R.id.fridge_brightness_bar);
+        fridgeBrightnessBar.setMax(255);
+
+        fridgeBrightness = appSettingsPreferences.getInt("FridgeBrightness",105);
+
         screenBrightnessBar = findViewById(R.id.brightness_bar);
         screenBrightnessBar.setMax(255);
 
@@ -65,8 +72,7 @@ public class FridgeSettings extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
-        SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
-        final SharedPreferences.Editor prefEditor = appSettingsPreferences.edit();
+
         nightSwitch = (SwitchCompat) findViewById(R.id.night_mode_switch);
         Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
         if (isNightModeOn) nightSwitch.setChecked(true);
