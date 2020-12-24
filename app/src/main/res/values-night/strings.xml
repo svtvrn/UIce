@@ -26,4 +26,6 @@
     <string name="temperature_scale">Choose a scale:</string>
     <string name="normal_ice">Normal</string>
     <string name="crushed_ice">Crushed</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
 </resources>
