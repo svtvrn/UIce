@@ -23,4 +23,5 @@
     <string name="nightmode">Night mode</string>
     <string name="screen_brightness">Screen Brightness:</string>
     <string name="fridge_brightness">Fridge Light Brightness:</string>
+    <string name="temperature_scale">Choose a scale:</string>
 </resources>

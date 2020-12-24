@@ -92,7 +92,7 @@
         android:textColor="@color/textPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fridge_actions_toolbar" />
 
@@ -105,7 +105,7 @@
         android:textColor="@color/textPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/night_mode_switch" />
 
@@ -133,5 +133,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="204dp"
+        android:text="@string/temperature_scale"
+        android:textColor="@color/textPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fridge_brightness_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
