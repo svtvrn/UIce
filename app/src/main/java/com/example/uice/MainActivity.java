@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private static final int REQUEST_CODE_SETTINGS = 1;
 
     private boolean temp_scale;
+    private boolean interruptLongClick;
     private String selectedValue;
     private ArrayList<String> values;
     private ArrayList<String> fridge_list = new ArrayList<>();
