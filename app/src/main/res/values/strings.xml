@@ -6,7 +6,7 @@
     <string name="fridge">Fridge</string>
     <string name="freezer">Freezer</string>
     <string name="ice_water">Ice/Water</string>
-    <string name="notes">Notes</string>
+    <string name="notes">Switch to notes view</string>
     <string name="settings">Settings</string>
     <string name="add_water">Hold to add water</string>
     <string name="add_ice">Tap to add ice</string>
@@ -28,4 +28,6 @@
     <string name="crushed_ice">Crushed</string>
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
+    <string name="power_freeze">Power Freeze</string>
+    <string name="power_freeze_hint_text">Hold for 3 seconds</string>
 </resources>

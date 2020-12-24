@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="48dp"
         android:text="@string/temp_text"
         android:textColor="@color/textPrimary"
@@ -61,17 +61,43 @@
         app:layout_constraintTop_toBottomOf="@+id/fridge_temp_button" />
 
     <TextView
-        android:id="@+id/notes_text"
+        android:id="@+id/power_freeze_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="76dp"
-        android:text="@string/notes"
+        android:layout_marginEnd="28dp"
+        android:text="@string/power_freeze"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/freezer_temp_button" />
+
+    <TextView
+        android:id="@+id/notes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/notes"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/notes_button"
+        app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
+
+    <TextView
+        android:id="@+id/power_freeze_hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/power_freeze_hint_text"
+        android:textColor="@color/textPrimary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toEndOf="@+id/ice_water_button"
+        app:layout_constraintTop_toBottomOf="@+id/power_freeze_button" />
 
     <TextView
         android:id="@+id/fridge_text"
@@ -132,24 +158,23 @@
         android:background="@null"
         android:contentDescription="@string/ice_water"
         android:src="@drawable/waterbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/water_text"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/water_text" />
+
 
     <ImageButton
         android:id="@+id/notes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="36dp"
         android:background="@null"
         android:contentDescription="@string/notes"
         android:src="@drawable/notes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_text"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ice_water_button"
+        app:layout_constraintVertical_bias="0.916" />
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -162,5 +187,17 @@
         android:src="@drawable/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/power_freeze_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toEndOf="@+id/ice_water_button"
+        app:layout_constraintTop_toBottomOf="@+id/power_freeze_text"
+        app:srcCompat="@drawable/powerfreeze" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
