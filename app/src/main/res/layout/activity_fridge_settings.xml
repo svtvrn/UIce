@@ -49,7 +49,7 @@
         android:id="@+id/night_mode_switch"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:text="@string/nightmode"
         android:textColor="@color/textPrimary"
         android:textSize="20sp"
@@ -70,30 +70,68 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/screen_brightness" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/sunimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         app:layout_constraintEnd_toStartOf="@+id/brightness_bar"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/screen_brightness"
         app:srcCompat="@drawable/brightness" />
+
+    <TextView
+        android:id="@+id/screen_brightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/screen_brightness"
+        android:textColor="@color/textPrimary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fridge_actions_toolbar" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="@string/brightness"
+        android:layout_marginTop="96dp"
+        android:text="@string/fridge_brightness"
         android:textColor="@color/textPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge_actions_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/night_mode_switch" />
+
+    <SeekBar
+        android:id="@+id/fridge_brightness_bar"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:indeterminate="false"
+        android:max="255"
+        android:progress="105"
+        android:theme="@style/MySeekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/fridgeimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/fridge"
+        app:layout_constraintEnd_toStartOf="@+id/fridge_brightness_bar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

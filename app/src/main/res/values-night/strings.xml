@@ -21,5 +21,7 @@
     <string name="temperature">Temperature</string>
     <string name="select">Select a temperature</string>
     <string name="nightmode">Night mode</string>
-    <string name="brightness">Brightness:</string>
+    <string name="screen_brightness">Screen Brightness:</string>
+    <string name="fridge_brightness">Fridge Light Brightness:</string>
+
 </resources>
