@@ -25,4 +25,8 @@
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
+    <style name="MySeekBar" parent="@style/Widget.AppCompat.SeekBar" >
+        <item name="colorAccent">@color/seekbarPrimary</item>
+    </style>
+
 </resources>

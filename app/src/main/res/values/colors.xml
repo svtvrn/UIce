@@ -11,4 +11,6 @@
     <color name="buttonPrimary">#5a0974</color>
     <color name="thumbPrimary">#5a0974</color>
 
+    <color name="seekbarPrimary">#1F0318</color>
+
 </resources>

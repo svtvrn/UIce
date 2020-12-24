@@ -67,6 +67,7 @@
         android:indeterminate="false"
         android:max="255"
         android:progress="20"
+        android:theme="@style/MySeekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"

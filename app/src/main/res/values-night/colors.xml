@@ -10,4 +10,6 @@
     <color name="backgroundPrimary">#090C0A</color>
     <color name="buttonPrimary">#5a0974</color>
     <color name="thumbPrimary">#5a0974</color>
+
+    <color name="seekbarPrimary">#B257B2</color>
 </resources>
