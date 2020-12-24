@@ -24,25 +24,22 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     private static final int REQUEST_CODE_SETTINGS = 1;
 
-    boolean temp_scale;
-    String selectedValue;
+    private boolean temp_scale;
+    private String selectedValue;
+    private ArrayList<String> values;
+    private ArrayList<String> fridge_list = new ArrayList<>();
+    private ArrayList<String> freezer_list = new ArrayList<>();
 
     private Button fridge;
     private Button freezer;
     private ImageButton actions;
     private ImageButton notes;
     private ImageButton settings;
-
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
-    TempAdapter adapter;
-
     private Button save;
     private Button cancel;
-
-    ArrayList<String> values;
-    ArrayList<String> fridge_list = new ArrayList<>();
-    ArrayList<String> freezer_list = new ArrayList<>();
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+    private TempAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,6 +173,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         }
     }
 
+    // Sets the Temperature Scale
+    // True: Celcius, False: Fahrenheit
     private void setScale(boolean scale) {
         if (scale) {
             fridge_list = new ArrayList<String>(Arrays.asList("0°C", "1°C", "2°C", "3°C", "4°C", "5°C", "6°C", "7°C"));

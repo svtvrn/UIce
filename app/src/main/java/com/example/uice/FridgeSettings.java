@@ -22,11 +22,14 @@ import android.widget.SeekBar;
 public class FridgeSettings extends AppCompatActivity {
 
     public static final String SCALE = "scale";
+    private int sysBrightness;
+    private int fridgeBrightness;
+    private boolean temp_scale = true;
 
     private ImageButton back;
     private SwitchCompat nightSwitch;
-    private SeekBar brightnessBar;
-    private int sysBrightness;
+    private SeekBar screenBrightnessBar;
+    private SeekBar fridgeBrightnessBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +45,14 @@ public class FridgeSettings extends AppCompatActivity {
         });
 
         askPermission(this);
-        brightnessBar = findViewById(R.id.brightness_bar);
-        brightnessBar.setMax(255);
+        screenBrightnessBar = findViewById(R.id.brightness_bar);
+        screenBrightnessBar.setMax(255);
 
         sysBrightness =android.provider.Settings.System.getInt(getContentResolver(),
                 android.provider.Settings.System.SCREEN_BRIGHTNESS,0);
-        brightnessBar.setProgress(sysBrightness);
+        screenBrightnessBar.setProgress(sysBrightness);
 
-        brightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        screenBrightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -87,7 +90,7 @@ public class FridgeSettings extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
-        intent.putExtra(SCALE, false);
+        intent.putExtra(SCALE, temp_scale);
         setResult(RESULT_OK, intent);
         super.onBackPressed();
     }
@@ -102,3 +105,6 @@ public class FridgeSettings extends AppCompatActivity {
         }
     }
 }
+
+//TODO Fridge Brightness Bar
+//TODO Radio Buttons
