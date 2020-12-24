@@ -13,8 +13,6 @@ public class FridgeActions extends AppCompatActivity {
     private ImageButton add_water;
     private ImageButton add_ice;
     private ImageButton add_crushed_ice;
-    //private ImageButton add_ice_2;
-    //private ImageButton add_ice_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +52,6 @@ public class FridgeActions extends AppCompatActivity {
                 addIce(true);
             }
         });
-
-        //add_ice_3 = (ImageButton) findViewById(R.id.add_ice_3_button);
     }
 
     public void openMainMenu(){
@@ -71,8 +67,6 @@ public class FridgeActions extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Added ice.", Toast.LENGTH_SHORT).show();
         } else if (type) {
             Toast.makeText(getApplicationContext(), "Added crushed ice.", Toast.LENGTH_SHORT).show();
-        } else {
-            //Toast.makeText(getApplicationContext(), "Added Ice 3.", Toast.LENGTH_SHORT).show();
         }
     }
 
