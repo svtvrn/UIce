@@ -22,9 +22,11 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements TempAdapter.OnTemperatureListener {
 
-    boolean temp_scale = false;
-    private String fridge_temp;
-    private String freezer_temp;
+    private static final int REQUEST_CODE_SETTINGS = 1;
+
+    boolean temp_scale;
+    String selectedValue;
+
     private Button fridge;
     private Button freezer;
     private ImageButton actions;
@@ -34,11 +36,13 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     TempAdapter adapter;
-    String selectedValue;
+
     private Button save;
     private Button cancel;
 
-    ArrayList<String> values = new ArrayList<>();
+    ArrayList<String> values;
+    ArrayList<String> fridge_list = new ArrayList<>();
+    ArrayList<String> freezer_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +61,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         date.setText(DateFormat.getDateInstance().format(calendar.getTime()));
 
         fridge = (Button) findViewById(R.id.fridge_temp_button);
-        if (temp_scale) fridge_temp = "6°C";
-        else fridge_temp = "43°F";
-        fridge.setText(String.valueOf(fridge_temp));
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,9 +69,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         });
 
         freezer = (Button) findViewById(R.id.freezer_temp_button);
-        if (temp_scale) freezer_temp = "-19°C";
-        else freezer_temp = "-2°F";
-        freezer.setText(String.valueOf(freezer_temp));
         freezer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,33 +100,11 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-    }
+        setScale(true);
 
-    public void openActionsActivity(){
-        Intent intent = new Intent (this,FridgeActions.class);
-        startActivity(intent);
-    }
-
-    public void openNotesActivity(){
-        Intent intent = new Intent (/*this,FridgeNotes.class*/);
-        startActivity(intent);
-    }
-
-    public void openSettingsActivity(){
-        Intent intent = new Intent (this,FridgeSettings.class);
-        startActivity(intent);
     }
 
     public void openFridgePopup(final Boolean type) {
-
-        values.clear();
-        if (type) {
-            if (temp_scale) values = new ArrayList<String>(Arrays.asList("0°C", "1°C", "2°C", "3°C", "4°C", "5°C", "6°C", "7°C"));
-            else values = new ArrayList<String>(Arrays.asList("32°F", "34°F", "36°F", "37°F", "39°F", "41°F", "43°F", "50°F"));
-        } else {
-            if (temp_scale) values = new ArrayList<String>(Arrays.asList("-23°C", "-22°C", "-21°C", "-20°C", "-19°C", "-18°C", "-17°C", "-16°C", "-15°C", "-14°C"));
-            else values = new ArrayList<String>(Arrays.asList("-9°F", "-8°F", "-6°F", "-4°F", "-2°F", "0°F", "1°F", "3°F", "5°F", "7°F"));
-        }
 
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
@@ -136,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
 
+        if (type) values = fridge_list;
+        else values = freezer_list;
         adapter = new TempAdapter(this, values,this);
         temperatures.setAdapter(adapter);
 
@@ -170,5 +148,49 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     public void onTempClick(int position) {
         selectedValue = values.get(position);
     }
-    
+
+    public void openActionsActivity(){
+        Intent intent = new Intent (this,FridgeActions.class);
+        startActivity(intent);
+    }
+
+    public void openNotesActivity(){
+        Intent intent = new Intent (/*this,FridgeNotes.class*/);
+        startActivity(intent);
+    }
+
+    public void openSettingsActivity(){
+        Intent intent = new Intent (this,FridgeSettings.class);
+        startActivityForResult(intent, REQUEST_CODE_SETTINGS);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_SETTINGS) {
+            if (resultCode == RESULT_OK) {
+                temp_scale =  data.getExtras().getBoolean(FridgeSettings.SCALE);
+                if (adapter != null) adapter.notifyDataSetChanged();
+                setScale(temp_scale);
+            }
+        }
+    }
+
+    private void setScale(boolean scale) {
+        if (scale) {
+            fridge_list = new ArrayList<String>(Arrays.asList("0°C", "1°C", "2°C", "3°C", "4°C", "5°C", "6°C", "7°C"));
+            freezer_list = new ArrayList<String>(Arrays.asList("-23°C", "-22°C", "-21°C", "-20°C", "-19°C", "-18°C", "-17°C", "-16°C", "-15°C", "-14°C"));
+        } else {
+            fridge_list = new ArrayList<String>(Arrays.asList("32°F", "34°F", "36°F", "37°F", "39°F", "41°F", "43°F", "50°F"));
+            freezer_list = new ArrayList<String>(Arrays.asList("-9°F", "-8°F", "-6°F", "-4°F", "-2°F", "0°F", "1°F", "3°F", "5°F", "7°F"));
+        }
+        if (selectedValue == null) {
+            fridge.setText(String.valueOf(fridge_list.get(2)));
+            freezer.setText(String.valueOf(freezer_list.get(2)));
+        } else {
+            fridge.setText(selectedValue);
+            freezer.setText(selectedValue);
+        }
+    }
+
 }

@@ -151,6 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fridge_brightness_bar" />
 
     <RadioGroup
+        android:id="@+id/scale_radiogroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -167,18 +168,18 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60sp"
             android:text="@string/celsius"
-            android:textSize="18sp"
             android:textColor="@color/textPrimary"
-            android:theme="@style/MyRadioButton"/>
+            android:textSize="18sp"
+            android:theme="@style/MyRadioButton" />
 
         <RadioButton
             android:id="@+id/fahrenheit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fahrenheit"
-            android:textSize="18sp"
             android:textColor="@color/textPrimary"
-            android:theme="@style/MyRadioButton"/>
+            android:textSize="18sp"
+            android:theme="@style/MyRadioButton" />
     </RadioGroup>
 
 
