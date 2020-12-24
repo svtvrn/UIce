@@ -157,13 +157,13 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
                 if(selectedValue!=null) {
                     if (type) {
                         fridge.setText(selectedValue);
-
                     }else {
                         freezer.setText(selectedValue);
-                        //dialog.dismiss();
                     }
                     dialog.dismiss();
                     selectedValue = null;
+                }else{
+                    Toast.makeText(getApplicationContext(), "Please select a temperature.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
