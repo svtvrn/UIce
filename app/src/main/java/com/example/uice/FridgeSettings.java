@@ -1,19 +1,28 @@
 package com.example.uice;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 
 public class FridgeSettings extends AppCompatActivity {
 
     private ImageButton back;
     private SwitchCompat nightSwitch;
+    private SeekBar brightnessBar;
+    private int sysBrightness;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,33 @@ public class FridgeSettings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openMainMenu();
+            }
+        });
+
+        askPermission(this);
+        brightnessBar = findViewById(R.id.brightness_bar);
+        brightnessBar.setMax(255);
+
+        sysBrightness =android.provider.Settings.System.getInt(getContentResolver(),
+                android.provider.Settings.System.SCREEN_BRIGHTNESS,0);
+        brightnessBar.setProgress(sysBrightness);
+
+        brightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                android.provider.Settings.System.putInt(getContentResolver(),
+                        android.provider.Settings.System.SCREEN_BRIGHTNESS,progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
@@ -52,5 +88,16 @@ public class FridgeSettings extends AppCompatActivity {
 
     public void openMainMenu(){
         super.onBackPressed();
+    }
+
+    public void askPermission(Context context){
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
+            if(Settings.System.canWrite(context)){
+
+            }else {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                context.startActivity(intent);
+            }
+        }
     }
 }
