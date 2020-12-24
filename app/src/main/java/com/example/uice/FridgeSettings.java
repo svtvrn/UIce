@@ -52,16 +52,10 @@ public class FridgeSettings extends AppCompatActivity {
                 android.provider.Settings.System.putInt(getContentResolver(),
                         android.provider.Settings.System.SCREEN_BRIGHTNESS,progress);
             }
-
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
+            public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
         SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
