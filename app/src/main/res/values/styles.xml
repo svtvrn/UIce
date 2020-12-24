@@ -29,4 +29,8 @@
         <item name="colorAccent">@color/seekbarPrimary</item>
     </style>
 
+    <style name="MyRadioButton" parent="@style/Widget.AppCompat.CompoundButton.RadioButton" >
+        <item name="colorAccent">@color/seekbarPrimary</item>
+    </style>
+
 </resources>
