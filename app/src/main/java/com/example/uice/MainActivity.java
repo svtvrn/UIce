@@ -24,13 +24,18 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity implements TempAdapter.OnTemperatureListener {
 
     private static final int REQUEST_CODE_SETTINGS = 1;
-
-    private boolean temp_scale;
+    private boolean currentScale;
     private boolean interruptLongClick;
     private String selectedValue;
     private ArrayList<String> values;
     private ArrayList<String> fridge_list = new ArrayList<>();
     private ArrayList<String> freezer_list = new ArrayList<>();
+
+    private SharedPreferences appSettingsPreferences;
+    private SharedPreferences.Editor prefEditor;
+    private int currentFridgeTemp;
+    private int currentFreezerTemp;
+    private int adapterPosition;
 
     private Button fridge;
     private Button freezer;
@@ -49,14 +54,17 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Checks if Dark Theme is enabled.
-        SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
+        appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
+        prefEditor = appSettingsPreferences.edit();
         boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
         boolean currentScale = appSettingsPreferences.getBoolean("TemperatureScale",true);
+        currentFridgeTemp = appSettingsPreferences.getInt("FridgeTemp",0);
+        currentFreezerTemp = appSettingsPreferences.getInt("FreezerTemp",1);
+
+        // Checks if Dark Theme is enabled.
         if (isNightModeOn) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        TextClock clock = (TextClock) findViewById(R.id.clock);
         Calendar calendar = Calendar.getInstance();
         TextView date = findViewById(R.id.date);
         date.setText(DateFormat.getDateInstance().format(calendar.getTime()));
@@ -111,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         });
 
         setScale(currentScale);
-
     }
 
     public void openFridgePopup(final Boolean type) {
@@ -137,8 +144,17 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             @Override
             public void onClick(View v) {
                 if(selectedValue!=null) {
-                    if (type) fridge.setText(selectedValue);
-                    else freezer.setText(selectedValue);
+                    if (type) {
+                        currentFridgeTemp = adapterPosition;
+                        fridge.setText(values.get(currentFridgeTemp));
+                        prefEditor.putInt("FridgeTemp",currentFridgeTemp);
+                    }
+                    else{
+                        currentFreezerTemp = adapterPosition;
+                        freezer.setText(values.get(currentFreezerTemp));
+                        prefEditor.putInt("FreezerTemp",currentFreezerTemp);
+                    }
+                    prefEditor.apply();
                     dialog.dismiss();
                     selectedValue = null;
                 } else Toast.makeText(getApplicationContext(), "Please select a temperature.", Toast.LENGTH_SHORT).show();
@@ -157,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     @Override
     public void onTempClick(int position) {
         selectedValue = values.get(position);
+        adapterPosition = position;
     }
 
     public void openActionsActivity(){
@@ -186,9 +203,9 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_SETTINGS) {
             if (resultCode == RESULT_OK) {
-                temp_scale =  data.getExtras().getBoolean(FridgeSettings.SCALE);
+                currentScale =  data.getExtras().getBoolean(FridgeSettings.SCALE);
                 if (adapter != null) adapter.notifyDataSetChanged();
-                setScale(temp_scale);
+                setScale(currentScale);
             }
         }
     }
@@ -204,11 +221,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             freezer_list = new ArrayList<String>(Arrays.asList("-9°F", "-8°F", "-6°F", "-4°F", "-2°F", "0°F", "1°F", "3°F", "5°F", "7°F"));
         }
         if (selectedValue == null) {
-            fridge.setText(String.valueOf(fridge_list.get(2)));
-            freezer.setText(String.valueOf(freezer_list.get(2)));
-        } else {
-            fridge.setText(selectedValue);
-            freezer.setText(selectedValue);
+            fridge.setText(fridge_list.get(currentFridgeTemp));
+            freezer.setText(String.valueOf(freezer_list.get(currentFreezerTemp)));
         }
     }
 
