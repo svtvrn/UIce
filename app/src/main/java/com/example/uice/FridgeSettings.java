@@ -24,12 +24,13 @@ public class FridgeSettings extends AppCompatActivity {
     public static final String SCALE = "scale";
     private int sysBrightness;
     private int fridgeBrightness;
-    private boolean temp_scale = true;
+    private boolean currentScale;
 
     private ImageButton back;
     private SwitchCompat nightSwitch;
     private SeekBar screenBrightnessBar;
     private SeekBar fridgeBrightnessBar;
+    private RadioGroup scaleRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,12 +106,33 @@ public class FridgeSettings extends AppCompatActivity {
             }
         });
 
+        scaleRadioGroup = findViewById(R.id.scale_radiogroup);
+        currentScale = appSettingsPreferences.getBoolean("TemperatureScale",true);
+        if(currentScale){
+            ((RadioButton)scaleRadioGroup.getChildAt(0)).setChecked(true);
+        }else{
+            ((RadioButton)scaleRadioGroup.getChildAt(1)).setChecked(true);
+        }
+        scaleRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == findViewById(R.id.celsius).getId()){
+                    currentScale=true;
+                    prefEditor.putBoolean("TemperatureScale",currentScale);
+                }else if(checkedId == findViewById(R.id.fahrenheit).getId()){
+                    currentScale=false;
+                    prefEditor.putBoolean("TemperatureScale",currentScale);
+                }
+                prefEditor.apply();
+            }
+        });
+
     }
 
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
-        intent.putExtra(SCALE, temp_scale);
+        intent.putExtra(SCALE, currentScale);
         setResult(RESULT_OK, intent);
         super.onBackPressed();
     }
@@ -126,5 +148,4 @@ public class FridgeSettings extends AppCompatActivity {
     }
 }
 
-//TODO Fridge Brightness Bar
 //TODO Radio Buttons
