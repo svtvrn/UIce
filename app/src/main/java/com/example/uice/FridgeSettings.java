@@ -51,6 +51,21 @@ public class FridgeSettings extends AppCompatActivity {
         fridgeBrightnessBar.setMax(255);
 
         fridgeBrightness = appSettingsPreferences.getInt("FridgeBrightness",105);
+        if(fridgeBrightness!=105){
+            fridgeBrightnessBar.setProgress(fridgeBrightness);
+        }
+        fridgeBrightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                fridgeBrightness = progress;
+                prefEditor.putInt("FridgeBrightness",fridgeBrightness);
+                prefEditor.apply();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
 
         screenBrightnessBar = findViewById(R.id.brightness_bar);
         screenBrightnessBar.setMax(255);
@@ -71,7 +86,6 @@ public class FridgeSettings extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
-
 
         nightSwitch = (SwitchCompat) findViewById(R.id.night_mode_switch);
         Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
