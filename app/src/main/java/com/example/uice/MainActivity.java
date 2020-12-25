@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
         // Checks if Dark Theme is enabled.
         SharedPreferences appSettingsPreferences = getSharedPreferences("AppSettingsPrefs",0);
-        Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
+        boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
+        boolean currentScale = appSettingsPreferences.getBoolean("TemperatureScale",true);
         if (isNightModeOn) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        setScale(true);
+        setScale(currentScale);
 
     }
 

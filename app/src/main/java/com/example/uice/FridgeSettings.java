@@ -88,7 +88,7 @@ public class FridgeSettings extends AppCompatActivity {
         });
 
         nightSwitch = (SwitchCompat) findViewById(R.id.night_mode_switch);
-        Boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
+        boolean isNightModeOn = appSettingsPreferences.getBoolean("NightMode",false);
         if (isNightModeOn) nightSwitch.setChecked(true);
         else nightSwitch.setChecked(false);
         nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -107,11 +107,8 @@ public class FridgeSettings extends AppCompatActivity {
 
         scaleRadioGroup = findViewById(R.id.scale_radiogroup);
         currentScale = appSettingsPreferences.getBoolean("TemperatureScale",true);
-        if(currentScale){
-            ((RadioButton)scaleRadioGroup.getChildAt(0)).setChecked(true);
-        }else{
-            ((RadioButton)scaleRadioGroup.getChildAt(1)).setChecked(true);
-        }
+        if (currentScale) ((RadioButton)scaleRadioGroup.getChildAt(0)).setChecked(true);
+        else ((RadioButton)scaleRadioGroup.getChildAt(1)).setChecked(true);
         scaleRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
