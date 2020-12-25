@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     }
 
     // Sets the Temperature Scale
-    // True: Celcius, False: Fahrenheit
+    // True: Celsius, False: Fahrenheit
     private void setScale(boolean scale) {
         if (scale) {
             fridge_list = new ArrayList<String>(Arrays.asList("0°C", "1°C", "2°C", "3°C", "4°C", "5°C", "6°C", "7°C"));

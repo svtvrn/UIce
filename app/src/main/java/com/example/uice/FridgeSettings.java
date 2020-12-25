@@ -74,7 +74,6 @@ public class FridgeSettings extends AppCompatActivity {
         sysBrightness =android.provider.Settings.System.getInt(getContentResolver(),
                 android.provider.Settings.System.SCREEN_BRIGHTNESS,0);
         screenBrightnessBar.setProgress(sysBrightness);
-
         screenBrightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -147,5 +146,3 @@ public class FridgeSettings extends AppCompatActivity {
         }
     }
 }
-
-//TODO Radio Buttons
