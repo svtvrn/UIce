@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     private static final int REQUEST_CODE_SETTINGS = 1;
     private boolean currentScale;
-    private boolean interruptLongClick;
+    //private boolean interruptLongClick;
     private String selectedValue;
     private ArrayList<String> values;
     private ArrayList<String> fridge_list = new ArrayList<>();
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     }
 
     public void openNotesActivity(){
-        Intent intent = new Intent (/*this,FridgeNotes.class*/);
+        Intent intent = new Intent (this,FridgeNotes.class);
         startActivity(intent);
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundPrimary"
+    android:background="#FFFEEF"
     tools:context=".FridgeNotes">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,6 +25,7 @@
             android:layout_height="40sp"
             android:layout_marginStart="20dp"
             android:background="@drawable/colour"
+            android:onClick="whiteColour"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/eraser"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +36,7 @@
             android:layout_height="40sp"
             android:layout_marginStart="16dp"
             android:background="@drawable/colour"
+            android:onClick="blackColour"
             android:backgroundTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/white_colour"
@@ -47,6 +49,7 @@
             android:layout_height="40sp"
             android:layout_marginStart="16dp"
             android:background="@drawable/colour"
+            android:onClick="redColour"
             android:backgroundTint="#ff0f00"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/black_colour"
@@ -58,6 +61,7 @@
             android:layout_height="40sp"
             android:layout_marginStart="16dp"
             android:background="@drawable/colour"
+            android:onClick="yellowColour"
             android:backgroundTint="#00ff00"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/red_colour"
@@ -70,6 +74,7 @@
             android:layout_height="40sp"
             android:layout_marginStart="16dp"
             android:background="@drawable/colour"
+            android:onClick="blueColour"
             android:backgroundTint="#0000ff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,6 +90,7 @@
             android:layout_marginStart="12dp"
             android:background="@null"
             android:src="@drawable/pen"
+            android:onClick="pencil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -96,6 +102,7 @@
             android:layout_marginStart="12dp"
             android:background="@null"
             android:src="@drawable/eraser"
+            android:onClick="eraser"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/pencil"
             app:layout_constraintTop_toTopOf="parent"
@@ -109,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="13dp"
         android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,5 +125,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/clear" />
+
+    <TextView
+        android:id="@+id/clear_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="13dp"
+        android:text="Clear"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clear_notes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
