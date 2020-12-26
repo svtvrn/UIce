@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.uice">
 
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
     <application
@@ -13,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FridgeSettings"></activity>
+        <activity android:name=".FridgeNotes"></activity>
+        <activity android:name=".FridgeSettings" />
         <activity android:name=".FridgeActions" />
         <activity android:name=".MainActivity">
             <intent-filter>
