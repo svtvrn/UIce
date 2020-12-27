@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="410sp"
-        android:layout_height="80sp"
+        android:layout_height="60sp"
         android:background="@drawable/notes_panel"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,26 +20,15 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/white_colour"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/colour"
-            android:onClick="whiteColour"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/eraser"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
             android:id="@+id/black_colour"
             android:layout_width="40sp"
             android:layout_height="40sp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="40dp"
             android:background="@drawable/colour"
-            android:onClick="blackColour"
             android:backgroundTint="#000000"
+            android:onClick="blackColour"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/white_colour"
+            app:layout_constraintStart_toEndOf="@+id/eraser"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
@@ -87,10 +76,10 @@
             android:id="@+id/pencil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="24dp"
             android:background="@null"
-            android:src="@drawable/pen"
             android:onClick="pencil"
+            android:src="@drawable/pen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -99,14 +88,13 @@
             android:id="@+id/eraser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="24dp"
             android:background="@null"
-            android:src="@drawable/eraser"
             android:onClick="eraser"
+            android:src="@drawable/eraser"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/pencil"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.525" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
