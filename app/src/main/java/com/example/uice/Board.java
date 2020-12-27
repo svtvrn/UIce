@@ -2,6 +2,7 @@ package com.example.uice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -18,7 +19,7 @@ public class Board extends View {
     static ArrayList<Path> pathList = new ArrayList<>();
     static ArrayList<Integer> colorList = new ArrayList<>();
     ViewGroup.LayoutParams params;
-    static int currentBrush = R.id.black_colour;
+    static int currentBrush = Color.BLACK;
 
     public Board(Context context) {
         super(context);

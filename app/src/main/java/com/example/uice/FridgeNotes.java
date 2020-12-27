@@ -2,22 +2,29 @@ package com.example.uice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 
 public class FridgeNotes extends AppCompatActivity {
 
     public static Path path = new Path();
     public static Paint brush = new Paint();
+    private ImageButton pen;
+    private ImageButton eraser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge_notes);
+
+        pen = findViewById(R.id.pencil);
+        eraser = findViewById(R.id.eraser);
     }
 
     public void pencil(View view){
