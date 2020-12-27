@@ -25,7 +25,7 @@ public class FridgeNotes extends AppCompatActivity {
         currentColor(brush.getColor());
     }
     public void eraser(View view){
-        brush.setColor(Color.WHITE);
+        brush.setColor(Color.parseColor("#FFF3F2"));
         currentColor(brush.getColor());
     }
     public void blackColour(View view){
