@@ -8,6 +8,7 @@
     tools:context=".FridgeNotes">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="660sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
@@ -73,7 +74,7 @@
             android:layout_marginStart="16dp"
             android:background="@drawable/colour"
             android:onClick="yellowColour"
-            android:backgroundTint="#00ff00"
+            android:backgroundTint="#f0f000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/red_colour"
             app:layout_constraintTop_toTopOf="parent"
@@ -136,6 +137,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/clear" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:background="@null"
+        android:onClick="back"
+        android:src="@drawable/fridgeback"
+        android:tint="@color/seekbarPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/clear_notes"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/clear_text"

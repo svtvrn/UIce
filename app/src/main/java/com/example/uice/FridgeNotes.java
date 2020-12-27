@@ -55,4 +55,8 @@ public class FridgeNotes extends AppCompatActivity {
         Board.colorList.clear();
         path.reset();
     }
+
+    public void back(View view) {
+        super.onBackPressed();
+    }
 }
