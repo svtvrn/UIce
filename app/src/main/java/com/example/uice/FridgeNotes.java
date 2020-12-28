@@ -46,5 +46,6 @@ public class FridgeNotes extends AppCompatActivity {
 
     public void back(View view) {
         super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 }

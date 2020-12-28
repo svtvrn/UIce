@@ -219,11 +219,10 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         startActivity(intent);
     }
 
-    public void activatePowerFreeze(){}
-
     public void openNotesActivity(){
         Intent intent = new Intent (this,FridgeNotes.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     public void openSettingsActivity(){
