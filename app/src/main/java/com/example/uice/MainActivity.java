@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private int currentFridgeTemp;
     private int currentFreezerTemp;
     private int adapterPosition;
+    private int humidityControl;
 
     private Button fridge;
     private Button freezer;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private Button save;
     private Button cancel;
     private AlertDialog.Builder dialogBuilder;
+    private SeekBar humidityControlBar;
     private AlertDialog dialog;
     private TempAdapter adapter;
 
@@ -133,6 +136,24 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             public void onClick(View v) {
                 openSettingsActivity();
             }
+        });
+
+        humidityControlBar = findViewById(R.id.humidity_control_bar);
+        humidityControlBar.setMax(5);
+
+        humidityControl = appSettingsPreferences.getInt("HumidityControl",3);
+        if(humidityControl!=3) humidityControlBar.setProgress(humidityControl);
+        humidityControlBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                humidityControl = progress;
+                prefEditor.putInt("HumidityControl",humidityControl);
+                prefEditor.apply();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
         setScale(currentScale);
