@@ -12,13 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="48dp"
         android:text="@string/temp_text"
         android:textColor="@color/textPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clock" />
 
@@ -77,14 +76,14 @@
         android:id="@+id/notes_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
         android:text="@string/notes"
         android:textColor="@color/textPrimary"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/notes_button"
-        app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notes_button" />
 
     <TextView
         android:id="@+id/power_freeze_hint_text"
@@ -165,17 +164,15 @@
 
     <ImageButton
         android:id="@+id/notes_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         android:background="@null"
         android:contentDescription="@string/notes"
         android:src="@drawable/notes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ice_water_button"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -201,5 +198,32 @@
         app:layout_constraintStart_toEndOf="@+id/ice_water_button"
         app:layout_constraintTop_toBottomOf="@+id/power_freeze_text"
         app:srcCompat="@drawable/powerfreeze" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="287dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="16dp"
+        android:max="5"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/humidity_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Humidity Control"
+        android:textColor="@color/textPrimary"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

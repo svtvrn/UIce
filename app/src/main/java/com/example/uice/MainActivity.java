@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         TextView date = findViewById(R.id.date);
         date.setText(DateFormat.getDateInstance().format(calendar.getTime()));
 
+        final Handler handler = new Handler();
+
         fridge = (Button) findViewById(R.id.fridge_temp_button);
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,10 +98,23 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         });
 
         powerFreeze = (ImageButton) findViewById(R.id.power_freeze_button);
-        powerFreeze.setOnLongClickListener(new View.OnLongClickListener() {
+        powerFreeze.setOnTouchListener(new View.OnTouchListener() {
+            Runnable activatePowerFreeze = new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Power freeze activated.", Toast.LENGTH_SHORT).show();
+                }
+            };
             @Override
-            public boolean onLongClick(View v) {
-                activatePowerFreeze();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    handler.postDelayed(activatePowerFreeze,3000);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    handler.removeCallbacks(activatePowerFreeze);
+                    break;
+                }
                 return true;
             }
         });
