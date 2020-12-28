@@ -219,7 +219,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
-        android:text="@string/high"
+        android:text="@string/low"
         android:textColor="@color/textPrimary"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/humidity_control_bar"
