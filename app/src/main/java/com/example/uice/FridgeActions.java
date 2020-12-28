@@ -3,6 +3,7 @@ package com.example.uice;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -10,7 +11,8 @@ import android.widget.Toast;
 public class FridgeActions extends AppCompatActivity {
 
     private ImageButton back;
-    private ImageButton add_water;
+    private ImageButton add_tap_water;
+    private ImageButton add_cold_water;
     private ImageButton add_ice;
     private ImageButton add_crushed_ice;
 
@@ -27,29 +29,59 @@ public class FridgeActions extends AppCompatActivity {
             }
         });
 
-        add_water = (ImageButton) findViewById(R.id.add_water_button);
-        add_water.setOnLongClickListener(new View.OnLongClickListener() {
+        add_cold_water = findViewById(R.id.cold_water_button);
+        add_cold_water.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onLongClick(View v) {
-                addWater();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        addWater(true);
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
                 return true;
             }
-
         });
 
-        add_ice = (ImageButton) findViewById(R.id.add_ice_button);
-        add_ice.setOnClickListener(new View.OnClickListener() {
+        add_tap_water = findViewById(R.id.tap_water_button);
+        add_tap_water.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                addIce(false);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        addWater(false);
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return true;
             }
         });
 
-        add_crushed_ice = (ImageButton) findViewById(R.id.add_crushed_ice_button);
-        add_crushed_ice.setOnClickListener(new View.OnClickListener() {
+        add_ice = findViewById(R.id.ice_button);
+        add_ice.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                addIce(true);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        addIce(false);
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return true;
+            }
+        });
+
+        add_crushed_ice = findViewById(R.id.crushed_ice_button);
+        add_crushed_ice.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        addIce(true);
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return true;
             }
         });
     }
@@ -58,15 +90,19 @@ public class FridgeActions extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    public void addWater() {
-        Toast.makeText(getApplicationContext(), "Adding Water...", Toast.LENGTH_LONG).show();
+    public void addWater(boolean type) {
+        if (!type) {
+            Toast.makeText(getApplicationContext(), "Adding tap water...", Toast.LENGTH_LONG).show();
+        }else if(type){
+            Toast.makeText(getApplicationContext(), "Adding cold water...", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void addIce(boolean type) {
         if (!type) {
-            Toast.makeText(getApplicationContext(), "Added ice.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Adding ice...", Toast.LENGTH_SHORT).show();
         } else if (type) {
-            Toast.makeText(getApplicationContext(), "Added crushed ice.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Adding crushed ice...", Toast.LENGTH_SHORT).show();
         }
     }
 

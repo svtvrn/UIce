@@ -12,8 +12,6 @@
     <string name="add_ice">Tap to add ice</string>
     <string name="add_water_button">Water</string>
     <string name="ice1">Ice</string>
-    <string name="ice2">Ice</string>
-    <string name="ice3">Ice</string>
     <string name="back">back</string>
     <string name="menu">Back to main menu</string>
     <string name="save">Save</string>
@@ -30,4 +28,9 @@
     <string name="fahrenheit">Fahrenheit</string>
     <string name="power_freeze">Power Freeze</string>
     <string name="power_freeze_hint_text">Hold for 3 seconds</string>
+    <string name="low">Low</string>
+    <string name="high">High</string>
+    <string name="humidity_control">Humidity Control</string>
+    <string name="tap_water">Tap Water</string>
+    <string name="cold_water">Cold Water</string>
 </resources>
