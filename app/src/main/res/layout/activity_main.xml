@@ -11,15 +11,14 @@
         android:id="@+id/change_temp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="12dp"
         android:text="@string/temp_text"
         android:textColor="@color/textPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clock" />
+        app:layout_constraintTop_toBottomOf="@+id/fridge_temp_button" />
 
     <TextView
         android:id="@+id/date"
@@ -38,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:format24Hour="hh:mm"
         android:text="@string/clock"
         android:textColor="@color/textPrimary"
@@ -51,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="64dp"
         android:text="@string/ice_water"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
@@ -63,8 +62,8 @@
         android:id="@+id/power_freeze_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/power_freeze"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
@@ -76,14 +75,14 @@
         android:id="@+id/notes_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
         android:text="@string/notes"
         android:textColor="@color/textPrimary"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_button" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clock" />
 
     <TextView
         android:id="@+id/power_freeze_hint_text"
@@ -103,27 +102,27 @@
         android:id="@+id/fridge_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="50dp"
         android:text="@string/fridge"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_temp_text" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_text" />
 
     <TextView
         android:id="@+id/freezer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="66dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/freezer"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_temp_text" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_text" />
 
     <Button
         android:id="@+id/fridge_temp_button"
@@ -147,6 +146,8 @@
         android:textColor="@color/selectedPrimary"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fridge_temp_button"
         app:layout_constraintTop_toBottomOf="@+id/freezer_text" />
 
     <ImageButton
@@ -164,14 +165,16 @@
 
     <ImageButton
         android:id="@+id/notes_button"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="96dp"
         android:background="@null"
         android:contentDescription="@string/notes"
         android:src="@drawable/notes"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/notes_text"
         app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
     <ImageButton
@@ -240,7 +243,7 @@
         android:id="@+id/humidity_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:text="@string/humidity_control"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
