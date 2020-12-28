@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -27,6 +27,7 @@
 
     <style name="MySeekBar" parent="@style/Widget.AppCompat.SeekBar" >
         <item name="colorAccent">@color/seekbarPrimary</item>
+        <item name="android:progressBackgroundTint" tools:targetApi="lollipop">@color/seekbarPrimary</item>
     </style>
 
     <style name="MyRadioButton" parent="@style/Widget.AppCompat.CompoundButton.RadioButton" >
