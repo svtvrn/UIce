@@ -198,12 +198,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         startActivity(intent);
     }
 
-    public void activatePowerFreeze(){
-        for(int i=3; i>0; i--){
-            Toast.makeText(getApplicationContext(), String.valueOf(i), Toast.LENGTH_SHORT).show();
-        }
-        Toast.makeText(getApplicationContext(), "Power freeze activated.", Toast.LENGTH_SHORT).show();
-    }
+    public void activatePowerFreeze(){}
 
     public void openNotesActivity(){
         Intent intent = new Intent (this,FridgeNotes.class);
