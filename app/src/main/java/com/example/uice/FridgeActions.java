@@ -92,9 +92,9 @@ public class FridgeActions extends AppCompatActivity {
 
     public void addWater(boolean type) {
         if (!type) {
-            Toast.makeText(getApplicationContext(), "Adding tap water...", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Adding tap water...", Toast.LENGTH_SHORT).show();
         }else if(type){
-            Toast.makeText(getApplicationContext(), "Adding cold water...", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Adding cold water...", Toast.LENGTH_SHORT).show();
         }
     }
 
