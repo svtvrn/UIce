@@ -208,7 +208,7 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="287dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:max="5"
         android:progress="3"
         android:theme="@style/MySeekBar"
@@ -223,6 +223,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/low"
         android:textColor="@color/textPrimary"
         android:textSize="14sp"
@@ -244,7 +245,7 @@
         android:id="@+id/humidity_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:text="@string/humidity_control"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
@@ -252,5 +253,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
+
+    <ImageView
+        android:id="@+id/low_drops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="4dp"
+        android:background="@null"
+        android:contentDescription="@string/low"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/low_humidity"
+        app:srcCompat="@drawable/humidity_low"
+        app:tint="@color/seekbarPrimary" />
+
+    <ImageView
+        android:id="@+id/high_drops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="23dp"
+        android:background="@null"
+        android:contentDescription="@string/high"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/high_humidity"
+        app:srcCompat="@drawable/humidity_high"
+        app:tint="@color/seekbarPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
