@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
         final Handler handler = new Handler();
 
-        fridge = (Button) findViewById(R.id.fridge_temp_button);
+        fridge =  findViewById(R.id.fridge_temp_button);
         fridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        freezer = (Button) findViewById(R.id.freezer_temp_button);
+        freezer =  findViewById(R.id.freezer_temp_button);
         freezer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        actions = (ImageButton) findViewById(R.id.ice_water_button);
+        actions = findViewById(R.id.ice_water_button);
         actions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        powerFreeze = (ImageButton) findViewById(R.id.power_freeze_button);
+        powerFreeze = findViewById(R.id.power_freeze_button);
         powerFreeze.setOnTouchListener(new View.OnTouchListener() {
             Runnable activatePowerFreeze = new Runnable() {
                 @Override
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        notes = (ImageButton) findViewById(R.id.notes_button);
+        notes =  findViewById(R.id.notes_button);
         notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             }
         });
 
-        settings = (ImageButton) findViewById(R.id.settings_button);
+        settings = findViewById(R.id.settings_button);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         dialogBuilder = new AlertDialog.Builder(MainActivity.this);
         final View tempPopupView = getLayoutInflater().inflate(R.layout.fridge_popup,null);
 
-        RecyclerView temperatures  = (RecyclerView) tempPopupView.findViewById(R.id.temp_recycler_view);
+        RecyclerView temperatures  =  tempPopupView.findViewById(R.id.temp_recycler_view);
         temperatures.setLayoutManager(new LinearLayoutManager(this));
 
         if (type) values = fridge_list;
@@ -174,8 +174,8 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         adapter = new TempAdapter(this, values,this);
         temperatures.setAdapter(adapter);
 
-        save = (Button) tempPopupView.findViewById(R.id.save_temp_button);
-        cancel = (Button) tempPopupView.findViewById(R.id.cancel_temp_button);
+        save =  tempPopupView.findViewById(R.id.save_temp_button);
+        cancel =  tempPopupView.findViewById(R.id.cancel_temp_button);
         dialogBuilder.setView(tempPopupView);
         dialog = dialogBuilder.create();
         dialog.show();

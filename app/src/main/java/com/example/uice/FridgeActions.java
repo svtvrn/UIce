@@ -2,6 +2,7 @@ package com.example.uice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,13 +34,17 @@ public class FridgeActions extends AppCompatActivity {
         add_cold_water.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addWater(true);
+                        break;
                     case MotionEvent.ACTION_UP:
+                        btn.clearColorFilter();
                         break;
                 }
-                return true;
+                return false;
             }
         });
 
@@ -47,13 +52,17 @@ public class FridgeActions extends AppCompatActivity {
         add_tap_water.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addWater(false);
+                        break;
                     case MotionEvent.ACTION_UP:
+                        btn.clearColorFilter();
                         break;
                 }
-                return true;
+                return false;
             }
         });
 
@@ -61,13 +70,17 @@ public class FridgeActions extends AppCompatActivity {
         add_ice.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addIce(false);
+                        break;
                     case MotionEvent.ACTION_UP:
+                        btn.clearColorFilter();
                         break;
                 }
-                return true;
+                return false;
             }
         });
 
@@ -75,13 +88,17 @@ public class FridgeActions extends AppCompatActivity {
         add_crushed_ice.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addIce(true);
+                        break;
                     case MotionEvent.ACTION_UP:
+                        btn.clearColorFilter();
                         break;
                 }
-                return true;
+                return false;
             }
         });
     }

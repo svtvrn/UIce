@@ -17,7 +17,6 @@ public class FridgeNotes extends AppCompatActivity {
     public static Paint brush = new Paint();
     private ImageButton pen;
     private ImageButton eraser;
-    private ImageButton clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class FridgeNotes extends AppCompatActivity {
         pen = findViewById(R.id.pencil);
         pen.setColorFilter(Color.parseColor("#5a0974"));
         eraser = findViewById(R.id.eraser);
-        clear = findViewById(R.id.clear_notes);
     }
 
     public void pencil(View view){
