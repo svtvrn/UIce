@@ -72,19 +72,6 @@
         app:layout_constraintTop_toBottomOf="@+id/freezer_temp_button" />
 
     <TextView
-        android:id="@+id/notes_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/notes"
-        android:textColor="@color/textPrimary"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clock" />
-
-    <TextView
         android:id="@+id/power_freeze_hint_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,27 +89,27 @@
         android:id="@+id/fridge_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="32dp"
         android:text="@string/fridge"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_text" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_button" />
 
     <TextView
         android:id="@+id/freezer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="66dp"
         android:text="@string/freezer"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_text" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_button" />
 
     <Button
         android:id="@+id/fridge_temp_button"
@@ -167,15 +154,14 @@
         android:id="@+id/notes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginTop="36dp"
         android:background="@null"
         android:contentDescription="@string/notes"
         android:src="@drawable/notes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/notes_text"
-        app:layout_constraintTop_toBottomOf="@+id/settings_button" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clock" />
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -214,9 +200,7 @@
         android:theme="@style/MySeekBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humidity_control"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/low_humidity"
@@ -250,6 +234,7 @@
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_control_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ice_water_button" />
@@ -262,6 +247,8 @@
         android:layout_marginTop="4dp"
         android:background="@null"
         android:contentDescription="@string/low"
+        app:layout_constraintEnd_toStartOf="@+id/humidity_control_bar"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/low_humidity"
         app:srcCompat="@drawable/humidity_low"
@@ -276,6 +263,8 @@
         android:background="@null"
         android:contentDescription="@string/high"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/high_humidity"
         app:layout_constraintTop_toBottomOf="@+id/high_humidity"
         app:srcCompat="@drawable/humidity_high"
         app:tint="@color/seekbarPrimary" />
