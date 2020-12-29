@@ -12,5 +12,6 @@
     <color name="thumbPrimary">#5a0974</color>
 
     <color name="seekbarPrimary">#1F0318</color>
+    <color name="hintPrimary">#666666</color>
 
 </resources>
