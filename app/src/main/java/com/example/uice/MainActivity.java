@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
@@ -31,14 +30,12 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private ArrayList<String> values;
     private ArrayList<String> fridge_list = new ArrayList<>();
     private ArrayList<String> freezer_list = new ArrayList<>();
-
     private SharedPreferences appSettingsPreferences;
     private SharedPreferences.Editor prefEditor;
     private int currentFridgeTemp;
     private int currentFreezerTemp;
     public static int adapterPosition;
     private int humidityControl;
-
     private Button fridge;
     private Button freezer;
     private ImageButton actions;

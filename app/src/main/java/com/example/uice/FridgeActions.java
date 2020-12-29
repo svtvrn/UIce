@@ -1,7 +1,6 @@
 package com.example.uice;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -123,5 +122,4 @@ public class FridgeActions extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Adding crushed ice...", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

@@ -4,7 +4,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +11,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -25,7 +23,6 @@ public class FridgeSettings extends AppCompatActivity {
     private int sysBrightness;
     private int fridgeBrightness;
     private boolean currentScale;
-
     private ImageButton back;
     private SwitchCompat nightSwitch;
     private SeekBar screenBrightnessBar;
