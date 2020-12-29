@@ -42,61 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
-        <!--
-        <Button
-            android:id="@+id/black_colour"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="40dp"
-            android:background="@drawable/colour"
-            android:backgroundTint="#000000"
-            android:onClick="blackColour"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/eraser"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <Button
-            android:id="@+id/red_colour"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/colour"
-            android:onClick="redColour"
-            android:backgroundTint="#ff0f00"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/black_colour"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/green_colour"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/colour"
-            android:onClick="yellowColour"
-            android:backgroundTint="#f0f000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/red_colour"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <Button
-            android:id="@+id/blue_colour"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/colour"
-            android:onClick="blueColour"
-            android:backgroundTint="#0000ff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/green_colour"
-            app:layout_constraintTop_toTopOf="parent" />
-
-            -->
-
 
         <ImageButton
             android:id="@+id/pencil"
