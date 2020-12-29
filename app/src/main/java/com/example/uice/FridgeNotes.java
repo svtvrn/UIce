@@ -32,13 +32,13 @@ public class FridgeNotes extends AppCompatActivity {
 
     public void pencil(View view){
         pen.setColorFilter(Color.parseColor("#5a0974"));
-        eraser.setColorFilter(null);
+        eraser.clearColorFilter();
         brush.setColor(Color.BLACK);
         currentColor(brush.getColor());
     }
     public void eraser(View view){
         eraser.setColorFilter(Color.parseColor("#5a0974"));
-        pen.setColorFilter(null);
+        pen.clearColorFilter();
         brush.setColor(Color.parseColor("#FFF3F2"));
         currentColor(brush.getColor());
     }

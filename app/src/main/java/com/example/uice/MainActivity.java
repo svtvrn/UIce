@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
         actions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 openActionsActivity();
             }
         });
@@ -106,15 +109,18 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
             };
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                 case MotionEvent.ACTION_DOWN:
+                    btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                     handler.postDelayed(activatePowerFreeze,3000);
                     break;
                 case MotionEvent.ACTION_UP:
+                    btn.clearColorFilter();
                     handler.removeCallbacks(activatePowerFreeze);
                     break;
                 }
-                return true;
+                return false;
             }
         });
 
