@@ -13,12 +13,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
 import android.widget.SeekBar;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
 
     private static final int REQUEST_CODE_SETTINGS = 1;
     private boolean currentScale;
-    //private boolean interruptLongClick;
     private String selectedValue;
     private ArrayList<String> values;
     private ArrayList<String> fridge_list = new ArrayList<>();
@@ -38,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     private SharedPreferences.Editor prefEditor;
     private int currentFridgeTemp;
     private int currentFreezerTemp;
-    private int adapterPosition;
+    public static int adapterPosition;
     private int humidityControl;
 
     private Button fridge;
