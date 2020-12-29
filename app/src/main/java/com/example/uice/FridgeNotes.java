@@ -17,6 +17,7 @@ public class FridgeNotes extends AppCompatActivity {
     public static Paint brush = new Paint();
     private ImageButton pen;
     private ImageButton eraser;
+    private ImageButton clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +25,20 @@ public class FridgeNotes extends AppCompatActivity {
         setContentView(R.layout.activity_fridge_notes);
 
         pen = findViewById(R.id.pencil);
+        pen.setColorFilter(Color.parseColor("#5a0974"));
         eraser = findViewById(R.id.eraser);
+        clear = findViewById(R.id.clear_notes);
     }
+
     public void pencil(View view){
+        pen.setColorFilter(Color.parseColor("#5a0974"));
+        eraser.setColorFilter(null);
         brush.setColor(Color.BLACK);
         currentColor(brush.getColor());
     }
     public void eraser(View view){
+        eraser.setColorFilter(Color.parseColor("#5a0974"));
+        pen.setColorFilter(null);
         brush.setColor(Color.parseColor("#FFF3F2"));
         currentColor(brush.getColor());
     }
@@ -38,6 +46,7 @@ public class FridgeNotes extends AppCompatActivity {
         Board.currentBrush = c;
         path = new Path();
     }
+
     public void clear(View view) {
         Board.pathList.clear();
         Board.colorList.clear();
