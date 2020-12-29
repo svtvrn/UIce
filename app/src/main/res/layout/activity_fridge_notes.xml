@@ -47,7 +47,7 @@
             android:id="@+id/pencil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="32dp"
             android:background="@null"
             android:onClick="pencil"
             android:src="@drawable/pen"
@@ -55,7 +55,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintVertical_bias="0.5
+" />
 
         <ImageButton
             android:id="@+id/eraser"
@@ -69,16 +70,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/pencil"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <ImageButton
             android:id="@+id/clear_notes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
             android:background="@null"
             android:onClick="clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/eraser"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/clear" />
