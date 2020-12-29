@@ -131,6 +131,7 @@ public class FridgeSettings extends AppCompatActivity {
         intent.putExtra(SCALE, currentScale);
         setResult(RESULT_OK, intent);
         super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     public void askPermission(Context context) {

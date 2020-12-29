@@ -105,6 +105,7 @@ public class FridgeActions extends AppCompatActivity {
 
     public void openMainMenu(){
         super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     public void addWater(boolean type) {

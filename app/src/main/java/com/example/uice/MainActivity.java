@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     public void openActionsActivity(){
         Intent intent = new Intent (this,FridgeActions.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     public void openNotesActivity(){
@@ -230,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
     public void openSettingsActivity(){
         Intent intent = new Intent (this,FridgeSettings.class);
         startActivityForResult(intent, REQUEST_CODE_SETTINGS);
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     @Override
