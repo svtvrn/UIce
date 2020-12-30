@@ -20,9 +20,9 @@
 
     <ImageButton
         android:id="@+id/fridge_actions_back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fridgeback"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:background="@drawable/backarrow"
         android:contentDescription="@string/back"
         app:layout_constraintBottom_toBottomOf="@+id/fridge_actions_toolbar"
         app:layout_constraintEnd_toEndOf="@+id/fridge_actions_toolbar"
