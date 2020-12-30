@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="630sp"
+        android:layout_height="610sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
 
         </include>
 
@@ -33,8 +34,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="410sp"
-        android:layout_height="60sp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:background="@drawable/notes_panel"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,12 +48,13 @@
             android:id="@+id/pencil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:background="@null"
             android:onClick="pencil"
             android:src="@drawable/pen"
             android:tint="#1F0318"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5
@@ -80,8 +82,6 @@
             android:background="@null"
             android:onClick="clear"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/eraser"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/clear" />
@@ -93,27 +93,32 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:background="@null"
         android:onClick="back"
         android:src="@drawable/fridgeback"
         android:tint="#1F0318"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/back_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="13dp"
         android:text="Switch to main view"
         android:textColor="#1F0318"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
