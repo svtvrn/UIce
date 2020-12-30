@@ -25,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintVertical_bias="0.0">
 
         </include>
 
@@ -66,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@null"
+            android:contentDescription="@"
             android:onClick="eraser"
             android:src="@drawable/eraser"
             android:tint="#1F0318"
@@ -80,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:background="@null"
+            android:contentDescription="@string/cancel"
             android:onClick="clear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/eraser"
@@ -93,8 +95,8 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:background="@null"
+        android:contentDescription="@string/back"
         android:onClick="back"
         android:src="@drawable/fridgeback"
         android:tint="#1F0318"
@@ -110,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="13dp"
+        android:contentDescription="@string/back"
         android:text="Switch to main view"
         android:textColor="#1F0318"
         android:textSize="15sp"
