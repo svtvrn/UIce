@@ -36,11 +36,11 @@ public class FridgeActions extends AppCompatActivity {
                 ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        btn.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addWater(true);
                         break;
                     case MotionEvent.ACTION_UP:
-                        btn.clearColorFilter();
+                        btn.getBackground().clearColorFilter();
                         break;
                 }
                 return false;
@@ -54,11 +54,11 @@ public class FridgeActions extends AppCompatActivity {
                 ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        btn.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addWater(false);
                         break;
                     case MotionEvent.ACTION_UP:
-                        btn.clearColorFilter();
+                        btn.getBackground().clearColorFilter();
                         break;
                 }
                 return false;
@@ -72,11 +72,11 @@ public class FridgeActions extends AppCompatActivity {
                 ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        btn.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addIce(false);
                         break;
                     case MotionEvent.ACTION_UP:
-                        btn.clearColorFilter();
+                        btn.getBackground().clearColorFilter();
                         break;
                 }
                 return false;
@@ -90,11 +90,11 @@ public class FridgeActions extends AppCompatActivity {
                 ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        btn.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         addIce(true);
                         break;
                     case MotionEvent.ACTION_UP:
-                        btn.clearColorFilter();
+                        btn.getBackground().clearColorFilter();
                         break;
                 }
                 return false;

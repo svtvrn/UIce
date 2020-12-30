@@ -181,16 +181,16 @@
 
     <ImageButton
         android:id="@+id/power_freeze_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="72dp"
         android:background="@drawable/powerfreeze"
         android:contentDescription="@string/power_freeze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
-        app:layout_constraintVertical_bias="0.217"/>
+        app:layout_constraintVertical_bias="0.21"/>
 
     <SeekBar
         android:id="@+id/humidity_control_bar"

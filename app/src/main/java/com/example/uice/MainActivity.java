@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity implements TempAdapter.OnTem
                 ImageButton btn = (ImageButton) v;
                 switch (event.getAction()){
                 case MotionEvent.ACTION_DOWN:
-                    btn.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                    btn.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                     handler.postDelayed(activatePowerFreeze,3000);
                     break;
                 case MotionEvent.ACTION_UP:
-                    btn.clearColorFilter();
+                    btn.getBackground().clearColorFilter();
                     handler.removeCallbacks(activatePowerFreeze);
                     break;
                 }
