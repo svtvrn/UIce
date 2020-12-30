@@ -32,8 +32,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/add_water_text"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintTop_toBottomOf="@+id/cold_water"
+        app:layout_constraintVertical_bias="0.24000001" />
 
     <ImageButton
         android:id="@+id/cold_water_button"
@@ -134,9 +134,8 @@
         android:text="@string/tap_water"
         android:textColor="@color/textPrimary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cold_water_button"
+        app:layout_constraintStart_toStartOf="@+id/cold_water_button"
         app:layout_constraintTop_toBottomOf="@+id/cold_water_button" />
 
     <TextView
@@ -147,9 +146,8 @@
         android:text="@string/cold_water"
         android:textColor="@color/textPrimary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tap_water_button"
+        app:layout_constraintStart_toStartOf="@+id/tap_water_button"
         app:layout_constraintTop_toBottomOf="@+id/tap_water_button" />
 
     <TextView
@@ -160,9 +158,8 @@
         android:text="@string/normal_ice"
         android:textColor="@color/textPrimary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ice_button"
+        app:layout_constraintStart_toStartOf="@+id/ice_button"
         app:layout_constraintTop_toBottomOf="@+id/ice_button" />
 
     <TextView
@@ -173,9 +170,8 @@
         android:text="@string/crushed_ice"
         android:textColor="@color/textPrimary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/crushed_ice_button"
+        app:layout_constraintStart_toStartOf="@+id/crushed_ice_button"
         app:layout_constraintTop_toBottomOf="@+id/crushed_ice_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

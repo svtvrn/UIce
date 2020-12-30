@@ -11,12 +11,12 @@
         android:id="@+id/change_temp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/temp_text"
         android:textColor="@color/hintPrimary"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/freezer_temp_button"
+        app:layout_constraintStart_toStartOf="@+id/fridge_temp_button"
         app:layout_constraintTop_toBottomOf="@+id/fridge_temp_button" />
 
     <TextView
@@ -26,57 +26,52 @@
         android:text="@string/date"
         android:textColor="@color/textPrimary"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.04000002" />
 
     <TextClock
         android:id="@+id/clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:format24Hour="hh:mm"
         android:text="@string/clock"
         android:textColor="@color/textPrimary"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintEnd_toEndOf="@+id/date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <TextView
         android:id="@+id/water_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="@string/ice_water"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge_temp_button"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintBottom_toTopOf="@+id/ice_water_button"
+        app:layout_constraintEnd_toEndOf="@+id/ice_water_button"
+        app:layout_constraintStart_toStartOf="@+id/ice_water_button" />
 
     <TextView
         android:id="@+id/power_freeze_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="@string/power_freeze"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freezer_temp_button"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintBottom_toTopOf="@+id/power_freeze_button"
+        app:layout_constraintEnd_toEndOf="@+id/power_freeze_button"
+        app:layout_constraintStart_toStartOf="@+id/power_freeze_button" />
 
     <TextView
         android:id="@+id/power_freeze_hint_text"
@@ -86,40 +81,35 @@
         android:text="@string/power_freeze_hint_text"
         android:textColor="@color/hintPrimary"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/power_freeze_button"
+        app:layout_constraintStart_toStartOf="@+id/power_freeze_button"
         app:layout_constraintTop_toBottomOf="@+id/power_freeze_button" />
 
     <TextView
         android:id="@+id/fridge_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="@string/fridge"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_button"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintBottom_toTopOf="@+id/fridge_temp_button"
+        app:layout_constraintEnd_toEndOf="@+id/fridge_temp_button"
+        app:layout_constraintStart_toStartOf="@+id/fridge_temp_button" />
 
     <TextView
         android:id="@+id/freezer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="@string/freezer"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notes_button"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintBottom_toTopOf="@+id/freezer_temp_button"
+        app:layout_constraintEnd_toEndOf="@+id/freezer_temp_button"
+        app:layout_constraintStart_toStartOf="@+id/freezer_temp_button" />
 
     <Button
         android:id="@+id/fridge_temp_button"
@@ -132,8 +122,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge_text"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_button"
+        app:layout_constraintVertical_bias="0.13" />
+
 
     <Button
         android:id="@+id/freezer_temp_button"
@@ -144,11 +135,10 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freezer_text"
-        app:layout_constraintVertical_bias="0.02" />
-
+        app:layout_constraintTop_toBottomOf="@+id/notes_button"
+        app:layout_constraintVertical_bias="0.13" />
 
     <ImageButton
         android:id="@+id/ice_water_button"
@@ -161,8 +151,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/water_text"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
+        app:layout_constraintVertical_bias="0.217" />
 
     <ImageButton
         android:id="@+id/notes_button"
@@ -173,9 +163,10 @@
         android:src="@drawable/notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clock"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -184,13 +175,12 @@
         android:background="@null"
         android:contentDescription="@string/settings"
         android:src="@drawable/settings"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/notes_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.899"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04
-" />
+        app:layout_constraintVertical_bias="0.307" />
 
     <ImageButton
         android:id="@+id/power_freeze_button"
@@ -200,10 +190,10 @@
         android:contentDescription="@string/power_freeze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power_freeze_text"
-        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
+        app:layout_constraintVertical_bias="0.218"
         app:srcCompat="@drawable/powerfreeze" />
 
     <SeekBar
@@ -217,8 +207,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humidity_control"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintTop_toBottomOf="@+id/power_freeze_hint_text"
+        app:layout_constraintVertical_bias="0.64" />
 
     <TextView
         android:id="@+id/low_humidity"
@@ -250,16 +240,14 @@
         android:id="@+id/humidity_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/humidity_control"
         android:textColor="@color/textPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power_freeze_hint_text"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintBottom_toTopOf="@+id/humidity_control_bar"
+        app:layout_constraintEnd_toEndOf="@+id/humidity_control_bar"
+        app:layout_constraintStart_toStartOf="@+id/humidity_control_bar" />
 
     <ImageView
         android:id="@+id/low_drops"
@@ -268,9 +256,8 @@
         android:layout_marginTop="4dp"
         android:background="@null"
         android:contentDescription="@string/low"
-        app:layout_constraintEnd_toEndOf="@+id/low_humidity"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/humidity_control_bar"
+        app:layout_constraintStart_toStartOf="@+id/low_humidity"
         app:layout_constraintTop_toBottomOf="@+id/low_humidity"
         app:srcCompat="@drawable/humidity_low"
         app:tint="@color/seekbarPrimary" />
@@ -282,9 +269,8 @@
         android:layout_marginTop="4dp"
         android:background="@null"
         android:contentDescription="@string/high"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toEndOf="@+id/humidity_control_bar"
+        app:layout_constraintEnd_toEndOf="@+id/high_humidity"
+        app:layout_constraintStart_toStartOf="@+id/high_humidity"
         app:layout_constraintTop_toBottomOf="@+id/high_humidity"
         app:srcCompat="@drawable/humidity_high"
         app:tint="@color/seekbarPrimary" />
