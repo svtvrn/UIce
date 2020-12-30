@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,19 +22,19 @@ public class FridgeNotes extends AppCompatActivity {
         setContentView(R.layout.activity_fridge_notes);
 
         pen = findViewById(R.id.pencil);
-        pen.setColorFilter(Color.parseColor("#5a0974"));
+        pen.getBackground().setColorFilter(Color.parseColor("#5a0974"), PorterDuff.Mode.MULTIPLY);
         eraser = findViewById(R.id.eraser);
     }
 
     public void pencil(View view){
-        pen.setColorFilter(Color.parseColor("#5a0974"));
-        eraser.clearColorFilter();
+        pen.getBackground().setColorFilter(Color.parseColor("#5a0974"), PorterDuff.Mode.MULTIPLY);
+        eraser.getBackground().clearColorFilter();
         brush.setColor(Color.BLACK);
         currentColor(brush.getColor());
     }
     public void eraser(View view){
-        eraser.setColorFilter(Color.parseColor("#5a0974"));
-        pen.clearColorFilter();
+        eraser.getBackground().setColorFilter(Color.parseColor("#5a0974"), PorterDuff.Mode.MULTIPLY);
+        pen.getBackground().clearColorFilter();
         brush.setColor(Color.parseColor("#FFF3F2"));
         currentColor(brush.getColor());
     }

@@ -174,10 +174,10 @@
         android:contentDescription="@string/settings"
         app:layout_constraintBottom_toTopOf="@+id/notes_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
         android:id="@+id/power_freeze_button"
@@ -247,10 +247,11 @@
 
     <ImageView
         android:id="@+id/low_drops"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="10dp"
+        android:layout_height="15dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/humidity_low"
+        android:background="@drawable/lowhumidity"
+        android:backgroundTint="@color/seekbarPrimary"
         android:contentDescription="@string/low"
         app:layout_constraintEnd_toStartOf="@+id/humidity_control_bar"
         app:layout_constraintStart_toStartOf="@+id/low_humidity"
@@ -259,10 +260,11 @@
 
     <ImageView
         android:id="@+id/high_drops"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/humidity_high"
+        android:background="@drawable/highhumidity"
+        android:backgroundTint="@color/seekbarPrimary"
         android:contentDescription="@string/high"
         app:layout_constraintEnd_toEndOf="@+id/high_humidity"
         app:layout_constraintStart_toStartOf="@+id/high_humidity"

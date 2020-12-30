@@ -46,12 +46,11 @@
 
         <ImageButton
             android:id="@+id/pencil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/ic_pencil"
             android:onClick="pencil"
-            android:src="@drawable/pen"
-            android:tint="#1F0318"
+            android:backgroundTint="#1F0318"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.08"
@@ -62,13 +61,12 @@
 
         <ImageButton
             android:id="@+id/eraser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="16dp"
-            android:background="@null"
+            android:background="@drawable/ic_eraser"
             android:onClick="eraser"
-            android:src="@drawable/eraser"
-            android:tint="#1F0318"
+            android:backgroundTint="#1F0318"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/pencil"
             app:layout_constraintTop_toTopOf="parent"
@@ -76,16 +74,16 @@
 
         <ImageButton
             android:id="@+id/clear_notes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginStart="20dp"
-            android:background="@null"
+            android:background="@drawable/clearnotes"
+            android:backgroundTint="#1F0318"
             android:contentDescription="@string/cancel"
             android:onClick="clear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/eraser"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/clear" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
