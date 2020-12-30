@@ -144,9 +144,8 @@
         android:id="@+id/ice_water_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
+        android:background="@drawable/waterbutton"
         android:contentDescription="@string/ice_water"
-        android:src="@drawable/waterbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -158,9 +157,8 @@
         android:id="@+id/notes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
+        android:background="@drawable/notes"
         android:contentDescription="@string/notes"
-        android:src="@drawable/notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -172,9 +170,8 @@
         android:id="@+id/settings_button"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@null"
+        android:background="@drawable/settings"
         android:contentDescription="@string/settings"
-        android:src="@drawable/settings"
         app:layout_constraintBottom_toTopOf="@+id/notes_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.899"
@@ -186,15 +183,14 @@
         android:id="@+id/power_freeze_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
+        android:background="@drawable/powerfreeze"
         android:contentDescription="@string/power_freeze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
-        app:layout_constraintVertical_bias="0.217"
-        app:srcCompat="@drawable/powerfreeze" />
+        app:layout_constraintVertical_bias="0.217"/>
 
     <SeekBar
         android:id="@+id/humidity_control_bar"
@@ -254,12 +250,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:background="@null"
+        android:background="@drawable/humidity_low"
         android:contentDescription="@string/low"
         app:layout_constraintEnd_toStartOf="@+id/humidity_control_bar"
         app:layout_constraintStart_toStartOf="@+id/low_humidity"
         app:layout_constraintTop_toBottomOf="@+id/low_humidity"
-        app:srcCompat="@drawable/humidity_low"
         app:tint="@color/seekbarPrimary" />
 
     <ImageView
@@ -267,12 +262,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:background="@null"
+        android:background="@drawable/humidity_high"
         android:contentDescription="@string/high"
         app:layout_constraintEnd_toEndOf="@+id/high_humidity"
         app:layout_constraintStart_toStartOf="@+id/high_humidity"
         app:layout_constraintTop_toBottomOf="@+id/high_humidity"
-        app:srcCompat="@drawable/humidity_high"
         app:tint="@color/seekbarPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
