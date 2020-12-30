@@ -155,9 +155,9 @@
 
     <ImageButton
         android:id="@+id/notes_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/notes"
+        android:layout_width="216dp"
+        android:layout_height="36dp"
+        android:background="@drawable/notesview"
         android:contentDescription="@string/notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
