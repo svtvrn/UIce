@@ -193,7 +193,7 @@
         app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
-        app:layout_constraintVertical_bias="0.218"
+        app:layout_constraintVertical_bias="0.217"
         app:srcCompat="@drawable/powerfreeze" />
 
     <SeekBar
