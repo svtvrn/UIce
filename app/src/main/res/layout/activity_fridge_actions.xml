@@ -76,8 +76,8 @@
 
     <ImageButton
         android:id="@+id/crushed_ice_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:background="@drawable/crushedice"
         android:contentDescription="@string/ice1"
         app:layout_constraintBottom_toBottomOf="parent"
