@@ -45,7 +45,7 @@
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/night_mode_switch"
-        android:layout_width="300sp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/nightmode"
@@ -59,7 +59,7 @@
 
     <SeekBar
         android:id="@+id/brightness_bar"
-        android:layout_width="300sp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:indeterminate="false"
@@ -74,14 +74,12 @@
         android:id="@+id/sunimg"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="21dp"
-        android:contentDescription="@string/screen_brightness"
         android:background="@drawable/sunicon"
         android:backgroundTint="@color/seekbarPrimary"
+        android:contentDescription="@string/screen_brightness"
+        app:layout_constraintBottom_toBottomOf="@+id/brightness_bar"
         app:layout_constraintEnd_toStartOf="@+id/brightness_bar"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/screen_brightness"/>
+        app:layout_constraintTop_toTopOf="@+id/brightness_bar" />
 
     <TextView
         android:id="@+id/screen_brightness"
@@ -111,7 +109,7 @@
 
     <SeekBar
         android:id="@+id/fridge_brightness_bar"
-        android:layout_width="300sp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:indeterminate="false"
@@ -127,14 +125,13 @@
         android:id="@+id/fridgeimg"
         android:layout_width="24dp"
         android:layout_height="30dp"
-        android:layout_marginTop="14dp"
-        android:contentDescription="@string/fridge_brightness"
         android:background="@drawable/fridgeicon"
         android:backgroundTint="@color/seekbarPrimary"
+        android:contentDescription="@string/fridge_brightness"
+        app:layout_constraintBottom_toBottomOf="@+id/fridge_brightness_bar"
         app:layout_constraintEnd_toStartOf="@+id/fridge_brightness_bar"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/fridge_brightness_bar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/scale"
@@ -165,7 +162,7 @@
             android:id="@+id/celsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="60sp"
+            android:layout_marginHorizontal="60dp"
             android:text="@string/celsius"
             android:textColor="@color/textPrimary"
             android:textSize="18sp"
