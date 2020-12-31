@@ -151,7 +151,7 @@
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <ImageButton
         android:id="@+id/notes_button"
@@ -187,7 +187,7 @@
         android:contentDescription="@string/power_freeze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_temp_text"
         app:layout_constraintVertical_bias="0.21"/>

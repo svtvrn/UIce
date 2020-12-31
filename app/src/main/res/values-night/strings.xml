@@ -5,7 +5,7 @@
     <string name="clock">Clock</string>
     <string name="fridge">Fridge</string>
     <string name="freezer">Freezer</string>
-    <string name="ice_water">Ice/Water</string>
+    <string name="ice_water">Water/Ice</string>
     <string name="notes">Switch to notes view</string>
     <string name="settings">Settings</string>
     <string name="add_water">Hold to add water</string>
