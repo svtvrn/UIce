@@ -42,7 +42,7 @@ public class Board extends View {
         brush.setStyle(Paint.Style.STROKE);
         brush.setStrokeCap(Paint.Cap.ROUND);
         brush.setStrokeJoin(Paint.Join.ROUND);
-        brush.setStrokeWidth(20f);
+        brush.setStrokeWidth(10f);
 
         params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
     }
